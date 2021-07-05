@@ -1,0 +1,11 @@
+com.axallant.rentcloud.application
+com.axallant.rentcloud.common
+com.axallant.rentcloud.contract
+com.axallant.rentcloud.contractDTO
+com.axallant.rentcloud.maintenance
+com.axallant.rentcloud.models
+com.axallant.rentcloud.notification
+com.axallant.rentcloud.payment
+com.axallant.rentcloud.propertiy
+com.axallant.rentcloud.propertiy.dto
+com.axallant.rentcloud.user
