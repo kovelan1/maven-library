@@ -1,6 +1,5 @@
 package com.axallant.rentcloud.contract;
 
-import java.sql.Time;
 import java.util.Date;
 
 import javax.persistence.Entity;

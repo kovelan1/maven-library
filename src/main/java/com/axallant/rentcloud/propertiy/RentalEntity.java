@@ -23,11 +23,6 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import net.bytebuddy.implementation.bind.annotation.Default;
-
 @Entity
 @Table(name = "rentalEntity")
 public class RentalEntity implements Serializable{

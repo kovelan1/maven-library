@@ -12,8 +12,8 @@ public class Address implements Serializable {
 	private String state;
 	private String zip;
 	private String country;
-	private double lat;
-	private double lng; 
+	private double lat=0.0;
+	private double lng=0.0; 
 	
 	
 	public Address(String address, String city, String state, String zip, String country, double lat, double lng) {

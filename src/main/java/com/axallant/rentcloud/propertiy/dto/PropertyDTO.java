@@ -3,7 +3,6 @@ package com.axallant.rentcloud.propertiy.dto;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 
 import com.axallant.rentcloud.models.Address;

@@ -5,8 +5,6 @@ import java.util.Objects;
 
 import javax.persistence.Embeddable;
 
-import org.springframework.lang.NonNull;
-
 @Embeddable
 public class LandLordPropID implements Serializable{
 

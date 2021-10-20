@@ -2,14 +2,8 @@ package com.axallant.rentcloud.user;
 
 
 import javax.persistence.*;
-
-
-import org.springframework.validation.annotation.Validated;
-
 import com.axallant.rentcloud.models.Address;
-import com.axallant.rentcloud.propertiy.Property;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.sun.istack.NotNull;
 
 import java.io.Serializable;
 import java.util.List;

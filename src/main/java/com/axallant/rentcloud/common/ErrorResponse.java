@@ -1,4 +1,3 @@
-
 package com.axallant.rentcloud.common;
 
 import java.util.Date;

@@ -1,10 +1,8 @@
 package com.axallant.rentcloud.propertiy;
 
 import java.io.Serializable;
-import java.util.Optional;
 
 import com.axallant.rentcloud.models.Address;
-import com.axallant.rentcloud.propertiy.Property;
 import com.axallant.rentcloud.propertiy.RentalEntity;
 
 

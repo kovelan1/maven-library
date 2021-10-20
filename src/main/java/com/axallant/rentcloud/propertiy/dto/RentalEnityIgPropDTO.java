@@ -2,8 +2,6 @@ package com.axallant.rentcloud.propertiy.dto;
 
 import java.util.Date;
 import java.util.List;
-
-import com.axallant.rentcloud.propertiy.Property;
 import com.axallant.rentcloud.propertiy.RentalEntity;
 import com.axallant.rentcloud.propertiy.Status;
 import com.axallant.rentcloud.propertiy.ViewingTime;

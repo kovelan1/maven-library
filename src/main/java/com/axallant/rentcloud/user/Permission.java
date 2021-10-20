@@ -1,11 +1,7 @@
 package com.axallant.rentcloud.user;
 
-
-
 import javax.persistence.*;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import java.io.Serializable;
 import java.util.List;
 
