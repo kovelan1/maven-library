@@ -14,12 +14,15 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Applicant {
 
 	@Id
 	private String username;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "applicant")
 	private List<Apply> apply;
 	
