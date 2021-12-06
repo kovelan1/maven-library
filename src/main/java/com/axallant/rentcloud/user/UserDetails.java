@@ -18,6 +18,26 @@ public class UserDetails {
 	 private AuthProvider provider;
 	 private String imageUrl;
 	 
+	 
+	 
+	 public UserDetails(String username, String firstName, String lastName, String middleName, Address address,
+			String mobileNumber, List<Role> roles, AuthProvider provider, String imageUrl) {
+		super();
+		this.username = username;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.middleName = middleName;
+		this.address = address;
+		this.mobileNumber = mobileNumber;
+		this.roles = roles;
+		this.provider = provider;
+		this.imageUrl = imageUrl;
+	}
+
+	public UserDetails transfromPramObject(User user) {
+		 return new UserDetails(user.getUsername(), user.getFirstName(), user.getLastName(), user.getMiddleName(), user.getAddress(), user.getMobileNumber(), user.getRoles(), user.getProvider(), user.getCoverImage().orElse(""));
+	 }
+	 
 	 public String getUsername() {
 		return username;
 	}

@@ -53,13 +53,20 @@ public class RentalEntity implements Serializable{
 	private int sqFeet;
 	private String description;
 	private String petPolicy;
+	private boolean smoking;
 	private boolean furnisher;
 	private boolean parkingGarage;
 	private boolean parkingOnStreet;
 	private boolean parkingDriveway;
 	private boolean parkingPrivateLot;
 	private boolean parkingDedicatedSpot;
+	private boolean parking;
 	private boolean parkingCovered;
+	
+	@Column(columnDefinition = "LONGTEXT")
+	private String parkingDescription;
+	
+	private double parkingFee;
 	
 	private boolean outDoorSharedYard;
 	private boolean outDoorPrivateYard;
@@ -79,11 +86,17 @@ public class RentalEntity implements Serializable{
 	private boolean pool;
 	private boolean hotTub ;
 	private boolean storage ;
+	private boolean gas;
+	private boolean laundry ;
+	private boolean guestParking;
+	
+	
 	private String walkInTime;
 	private String walkInDate;
 	private String amenities;
 	private double rent;
 	private double securityDeposit;
+	private double keyDeposit;
 	private int leasePeriod;
 	private boolean securityChk;
 	private boolean backgroundChk;
@@ -572,6 +585,70 @@ public class RentalEntity implements Serializable{
 
 	public void setViewingTimes(List<ViewingTime> viewingTimes) {
 		this.viewingTimes = viewingTimes;
+	}
+
+	public boolean isSmoking() {
+		return smoking;
+	}
+
+	public void setSmoking(boolean smoking) {
+		this.smoking = smoking;
+	}
+
+	public boolean isParking() {
+		return parking;
+	}
+
+	public void setParking(boolean parking) {
+		this.parking = parking;
+	}
+
+	public String getParkingDescription() {
+		return parkingDescription;
+	}
+
+	public void setParkingDescription(String parkingDescription) {
+		this.parkingDescription = parkingDescription;
+	}
+
+	public double getParkingFee() {
+		return parkingFee;
+	}
+
+	public void setParkingFee(double parkingFee) {
+		this.parkingFee = parkingFee;
+	}
+
+	public boolean isGas() {
+		return gas;
+	}
+
+	public void setGas(boolean gas) {
+		this.gas = gas;
+	}
+
+	public boolean isLaundry() {
+		return laundry;
+	}
+
+	public void setLaundry(boolean laundry) {
+		this.laundry = laundry;
+	}
+
+	public boolean isGuestParking() {
+		return guestParking;
+	}
+
+	public void setGuestParking(boolean guestParking) {
+		this.guestParking = guestParking;
+	}
+
+	public double getKeyDeposit() {
+		return keyDeposit;
+	}
+
+	public void setKeyDeposit(double keyDeposit) {
+		this.keyDeposit = keyDeposit;
 	}
 
 	

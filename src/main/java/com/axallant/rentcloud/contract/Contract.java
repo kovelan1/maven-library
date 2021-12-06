@@ -1,6 +1,7 @@
 package com.axallant.rentcloud.contract;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -24,23 +26,82 @@ public class Contract {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long contractId;
 	
-	private String tenantId;
+	@OneToMany(mappedBy = "contract")
+	private List<Tenant> tenants;
+	
 	private long rentalEntityId;
 	private long applicationId;
 	private Date startDate;
 	private Date endDate;
+	private String agreementType; //fixed monthly other
+	private String otherAgreementType; 
 	private double rent;
-	private int rentCollectionDate;
+	private int rentCollectionDay;
+	private String rentPaidOnPeriod;  // in ontrio contract No.5 (month , etc...) // if month fill the field month
+	
+	private boolean isSecurityDeposit;
 	private double securityDeposit;
+	private double keyDeposit;
+	@Column(columnDefinition = "LONGTEXT")
+	private String keyDepositDescription;
+	
 	private String moveInCheckList;
 	private String moveOutCheckList;
+	
 	@Enumerated(EnumType.STRING)
 	private ContractStatus status;
 	
 	private boolean parkingAcce;
+	
+	@Column(columnDefinition = "LONGTEXT")
+	private String parkingDescription;
+	
+	private boolean condominium;
+	private String condominiumLink;
+	
 	private boolean indoorSmoking;
-	private boolean moveEarly;
 	private boolean indoorVaping;
+	@Column(columnDefinition = "LONGTEXT") 
+	private String smokingDescription; 
+	
+	
+	private boolean emailOption;
+	@Column(columnDefinition = "LONGTEXT") 
+	private String documentEmails;
+	
+	private boolean landlordEmergencyContactOption;
+	private String landlordEmergencyContact;
+	
+	private double parkingFee;
+	
+	private String otherRentFee1Name;
+	private double otherRentFee1;
+	private String otherRentFee2Name;
+	private double otherRentFee2;
+	private String otherRentFee3Name;
+	private double otherRentFee3;
+	
+	private boolean isRentDiscount;
+	private double rentDiscount;
+	private String rentDiscountType;  //fixed or percentage
+	
+	
+	
+	@Column(columnDefinition = "LONGTEXT") 
+	private String rentDiscountDescription; 
+	
+	private String rentPayableTo;
+	private String rentPayableMethod;
+	
+	private String electricityResponsible; //landlord or tenant
+	private String heatResponsible;
+	private String waterResponsible;
+	@Column(columnDefinition = "LONGTEXT") 
+	private String otherResponsible; 
+	
+	
+	
+	private boolean moveEarly;
 	private String bankName;
 	private String bankBranch;
 	private String bankAddress;
@@ -61,7 +122,29 @@ public class Contract {
 	private LateFeeCharging  lateFeeCharging;
 	private int gracePeriod;
 	private double lateFeeAmount;
-	private boolean isSecurityDeposit;
+	
+	private boolean wheelChair;
+	private boolean gym;
+	private boolean airConditioner;
+	private boolean hardwoodFloors ;
+	private boolean fireplace ;
+	private boolean dishwasher;
+	private boolean walkInCloset ;
+	private boolean pool;
+	private boolean hotTub ;
+	private boolean storage ;
+	private boolean gas;
+	private boolean laundry ;
+	private String laundryChargeType ;
+	private boolean guestParking;
+	private String guestParkingType; 
+	private String serviceType1;
+	private String serviceType2;
+	private String serviceType3;
+	
+	@Column(columnDefinition = "LONGTEXT") 
+	private String serviceDescription; 
+	
 	private boolean subscription;
 	private String landLordId;
 	
@@ -110,12 +193,14 @@ public class Contract {
 		this.contractId = contractId;
 	}
 
-	public String getTenantId() {
-		return tenantId;
+	
+	public List<Tenant> getTenants() {
+		return tenants;
 	}
 
-	public void setTenantId(String tenantId) {
-		this.tenantId = tenantId;
+
+	public void setTenants(List<Tenant> tenants) {
+		this.tenants = tenants;
 	}
 
 	public long getRentalEntityId() {
@@ -158,13 +243,7 @@ public class Contract {
 		this.rent = rent;
 	}
 
-	public int getRentCollectionDate() {
-		return rentCollectionDate;
-	}
-
-	public void setRentCollectionDate(int rentCollectionDate) {
-		this.rentCollectionDate = rentCollectionDate;
-	}
+	
 
 	public double getSecurityDeposit() {
 		return securityDeposit;
@@ -396,11 +475,607 @@ public class Contract {
 
 
 
+	public String getAgreementType() {
+		return agreementType;
+	}
+
+
+
+	public void setAgreementType(String agreementType) {
+		this.agreementType = agreementType;
+	}
+
+
+
+	public String getOtherAgreementType() {
+		return otherAgreementType;
+	}
+
+
+
+	public void setOtherAgreementType(String otherAgreementType) {
+		this.otherAgreementType = otherAgreementType;
+	}
+
+
+
+	public int getRentCollectionDay() {
+		return rentCollectionDay;
+	}
+
+
+
+	public void setRentCollectionDay(int rentCollectionDay) {
+		this.rentCollectionDay = rentCollectionDay;
+	}
+
+
+
+	public String getRentPaidOnPeriod() {
+		return rentPaidOnPeriod;
+	}
+
+
+
+	public void setRentPaidOnPeriod(String rentPaidOnPeriod) {
+		this.rentPaidOnPeriod = rentPaidOnPeriod;
+	}
+
+
+
+	public double getKeyDeposit() {
+		return keyDeposit;
+	}
+
+
+
+	public void setKeyDeposit(double keyDeposit) {
+		this.keyDeposit = keyDeposit;
+	}
+
+
+
+	public String getKeyDepositDescription() {
+		return keyDepositDescription;
+	}
+
+
+
+	public void setKeyDepositDescription(String keyDepositDescription) {
+		this.keyDepositDescription = keyDepositDescription;
+	}
+
+
+
+	public String getParkingDescription() {
+		return parkingDescription;
+	}
+
+
+
+	public void setParkingDescription(String parkingDescription) {
+		this.parkingDescription = parkingDescription;
+	}
+
+
+
+	public boolean isCondominium() {
+		return condominium;
+	}
+
+
+
+	public void setCondominium(boolean condominium) {
+		this.condominium = condominium;
+	}
+
+
+
+	public String getCondominiumLink() {
+		return condominiumLink;
+	}
+
+
+
+	public void setCondominiumLink(String condominiumLink) {
+		this.condominiumLink = condominiumLink;
+	}
+
+
+
+	public String getSmokingDescription() {
+		return smokingDescription;
+	}
+
+
+
+	public void setSmokingDescription(String smokingDescription) {
+		this.smokingDescription = smokingDescription;
+	}
+
+
+
+	public boolean isEmailOption() {
+		return emailOption;
+	}
+
+
+
+	public void setEmailOption(boolean emailOption) {
+		this.emailOption = emailOption;
+	}
+
+
+
+	public String getDocumentEmails() {
+		return documentEmails;
+	}
+
+
+
+	public void setDocumentEmails(String documentEmails) {
+		this.documentEmails = documentEmails;
+	}
+
+
+
+	public boolean isLandlordEmergencyContactOption() {
+		return landlordEmergencyContactOption;
+	}
+
+
+
+	public void setLandlordEmergencyContactOption(boolean landlordEmergencyContactOption) {
+		this.landlordEmergencyContactOption = landlordEmergencyContactOption;
+	}
+
+
+
+	public String getLandlordEmergencyContact() {
+		return landlordEmergencyContact;
+	}
+
+
+
+	public void setLandlordEmergencyContact(String landlordEmergencyContact) {
+		this.landlordEmergencyContact = landlordEmergencyContact;
+	}
+
+
+
+	public double getParkingFee() {
+		return parkingFee;
+	}
+
+
+
+	public void setParkingFee(double parkingFee) {
+		this.parkingFee = parkingFee;
+	}
+
+
+
+	public String getOtherRentFee1Name() {
+		return otherRentFee1Name;
+	}
+
+
+
+	public void setOtherRentFee1Name(String otherRentFee1Name) {
+		this.otherRentFee1Name = otherRentFee1Name;
+	}
+
+
+
+	public double getOtherRentFee1() {
+		return otherRentFee1;
+	}
+
+
+
+	public void setOtherRentFee1(double otherRentFee1) {
+		this.otherRentFee1 = otherRentFee1;
+	}
+
+
+
+	public String getOtherRentFee2Name() {
+		return otherRentFee2Name;
+	}
+
+
+
+	public void setOtherRentFee2Name(String otherRentFee2Name) {
+		this.otherRentFee2Name = otherRentFee2Name;
+	}
+
+
+
+	public double getOtherRentFee2() {
+		return otherRentFee2;
+	}
+
+
+
+	public void setOtherRentFee2(double otherRentFee2) {
+		this.otherRentFee2 = otherRentFee2;
+	}
+
+
+
+	public String getOtherRentFee3Name() {
+		return otherRentFee3Name;
+	}
+
+
+
+	public void setOtherRentFee3Name(String otherRentFee3Name) {
+		this.otherRentFee3Name = otherRentFee3Name;
+	}
+
+
+
+	public double getOtherRentFee3() {
+		return otherRentFee3;
+	}
+
+
+
+	public void setOtherRentFee3(double otherRentFee3) {
+		this.otherRentFee3 = otherRentFee3;
+	}
+
+
+
+	public boolean isRentDiscount() {
+		return isRentDiscount;
+	}
+
+
+
+	public void setIsRentDiscount(boolean isRentDiscount) {
+		this.isRentDiscount = isRentDiscount;
+	}
+
+
+
+	public double getRentDiscount() {
+		return rentDiscount;
+	}
+
+
+
+	public void setRentDiscount(double rentDiscount) {
+		this.rentDiscount = rentDiscount;
+	}
+
+
+
+	public String getRentDiscountType() {
+		return rentDiscountType;
+	}
+
+
+
+	public void setRentDiscountType(String rentDiscountType) {
+		this.rentDiscountType = rentDiscountType;
+	}
+
+
+
+	public String getRentDiscountDescription() {
+		return rentDiscountDescription;
+	}
+
+
+
+	public void setRentDiscountDescription(String rentDiscountDescription) {
+		this.rentDiscountDescription = rentDiscountDescription;
+	}
+
+
+
+	public String getRentPayableTo() {
+		return rentPayableTo;
+	}
+
+
+
+	public void setRentPayableTo(String rentPayableTo) {
+		this.rentPayableTo = rentPayableTo;
+	}
+
+
+
+	public String getRentPayableMethod() {
+		return rentPayableMethod;
+	}
+
+
+
+	public void setRentPayableMethod(String rentPayableMethod) {
+		this.rentPayableMethod = rentPayableMethod;
+	}
+
+
+
+	public String getElectricityResponsible() {
+		return electricityResponsible;
+	}
+
+
+
+	public void setElectricityResponsible(String electricityResponsible) {
+		this.electricityResponsible = electricityResponsible;
+	}
+
+
+
+	public String getHeatResponsible() {
+		return heatResponsible;
+	}
+
+
+
+	public void setHeatResponsible(String heatResponsible) {
+		this.heatResponsible = heatResponsible;
+	}
+
+
+
+	public String getWaterResponsible() {
+		return waterResponsible;
+	}
+
+
+
+	public void setWaterResponsible(String waterResponsible) {
+		this.waterResponsible = waterResponsible;
+	}
+
+
+
+	public String getOtherResponsible() {
+		return otherResponsible;
+	}
+
+
+
+	public void setOtherResponsible(String otherResponsible) {
+		this.otherResponsible = otherResponsible;
+	}
+
+
+
+	public boolean isWheelChair() {
+		return wheelChair;
+	}
+
+
+
+	public void setWheelChair(boolean wheelChair) {
+		this.wheelChair = wheelChair;
+	}
+
+
+
+	public boolean isGym() {
+		return gym;
+	}
+
+
+
+	public void setGym(boolean gym) {
+		this.gym = gym;
+	}
+
+
+
+	public boolean isAirConditioner() {
+		return airConditioner;
+	}
+
+
+
+	public void setAirConditioner(boolean airConditioner) {
+		this.airConditioner = airConditioner;
+	}
+
+
+
+	public boolean isHardwoodFloors() {
+		return hardwoodFloors;
+	}
+
+
+
+	public void setHardwoodFloors(boolean hardwoodFloors) {
+		this.hardwoodFloors = hardwoodFloors;
+	}
+
+
+
+	public boolean isFireplace() {
+		return fireplace;
+	}
+
+
+
+	public void setFireplace(boolean fireplace) {
+		this.fireplace = fireplace;
+	}
+
+
+
+	public boolean isDishwasher() {
+		return dishwasher;
+	}
+
+
+
+	public void setDishwasher(boolean dishwasher) {
+		this.dishwasher = dishwasher;
+	}
+
+
+
+	public boolean isWalkInCloset() {
+		return walkInCloset;
+	}
+
+
+
+	public void setWalkInCloset(boolean walkInCloset) {
+		this.walkInCloset = walkInCloset;
+	}
+
+
+
+	public boolean isPool() {
+		return pool;
+	}
+
+
+
+	public void setPool(boolean pool) {
+		this.pool = pool;
+	}
+
+
+
+	public boolean isHotTub() {
+		return hotTub;
+	}
+
+
+
+	public void setHotTub(boolean hotTub) {
+		this.hotTub = hotTub;
+	}
+
+
+
+	public boolean isStorage() {
+		return storage;
+	}
+
+
+
+	public void setStorage(boolean storage) {
+		this.storage = storage;
+	}
+
+
+
+	public boolean isGas() {
+		return gas;
+	}
+
+
+
+	public void setGas(boolean gas) {
+		this.gas = gas;
+	}
+
+
+
+	public boolean isLaundry() {
+		return laundry;
+	}
+
+
+
+	public void setLaundry(boolean laundry) {
+		this.laundry = laundry;
+	}
+
+
+
+	public String getLaundryChargeType() {
+		return laundryChargeType;
+	}
+
+
+
+	public void setLaundryChargeType(String laundryChargeType) {
+		this.laundryChargeType = laundryChargeType;
+	}
+
+
+
+	public boolean isGuestParking() {
+		return guestParking;
+	}
+
+
+
+	public void setGuestParking(boolean guestParking) {
+		this.guestParking = guestParking;
+	}
+
+
+
+	public String getGuestParkingType() {
+		return guestParkingType;
+	}
+
+
+
+	public void setGuestParkingType(String guestParkingType) {
+		this.guestParkingType = guestParkingType;
+	}
+
+
+
+	public String getServiceType1() {
+		return serviceType1;
+	}
+
+
+
+	public void setServiceType1(String serviceType1) {
+		this.serviceType1 = serviceType1;
+	}
+
+
+
+	public String getServiceType2() {
+		return serviceType2;
+	}
+
+
+
+	public void setServiceType2(String serviceType2) {
+		this.serviceType2 = serviceType2;
+	}
+
+
+
+	public String getServiceType3() {
+		return serviceType3;
+	}
+
+
+
+	public void setServiceType3(String serviceType3) {
+		this.serviceType3 = serviceType3;
+	}
+
+
+
+	public String getServiceDescription() {
+		return serviceDescription;
+	}
+
+
+
+	public void setServiceDescription(String serviceDescription) {
+		this.serviceDescription = serviceDescription;
+	}
+
+
+
 	
-	
-	
-	
-    
     
 }
 
