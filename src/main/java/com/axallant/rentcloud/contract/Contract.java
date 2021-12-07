@@ -38,9 +38,15 @@ public class Contract {
 	private double rent;
 	private int rentCollectionDay;
 	private String rentPaidOnPeriod;  // in ontrio contract No.5 (month , etc...) // if month fill the field month
-	
+	private boolean isPartialRent;
+	private double partialRent;
+	private Date partialRentDate;
+	private Date partialRentFrom;
+	private Date partialRentTo; 
 	private boolean isSecurityDeposit;
 	private double securityDeposit;
+	
+	private boolean isKeyDeposit;
 	private double keyDeposit;
 	@Column(columnDefinition = "LONGTEXT")
 	private String keyDepositDescription;
@@ -158,6 +164,9 @@ public class Contract {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated_at", nullable = false)
     private Date updatedAt;
+    
+    private boolean isAdditionalTerms;
+    private String additionalTermsDoc;
     
     public Contract() {}
 
@@ -1061,20 +1070,109 @@ public class Contract {
 		this.serviceType3 = serviceType3;
 	}
 
-
-
 	public String getServiceDescription() {
 		return serviceDescription;
 	}
-
-
 
 	public void setServiceDescription(String serviceDescription) {
 		this.serviceDescription = serviceDescription;
 	}
 
+	public boolean isPartialRent() {
+		return isPartialRent;
+	}
+
+	public void setIsPartialRent(boolean isPartialRent) {
+		this.isPartialRent = isPartialRent;
+	}
+
+	
+
+	public boolean getIsKeyDeposit() {
+		return isKeyDeposit;
+	}
+
+	public void setIsKeyDeposit(boolean isKeyDeposit) {
+		this.isKeyDeposit = isKeyDeposit;
+	}
 
 
+
+	public double getPartialRent() {
+		return partialRent;
+	}
+
+
+
+	public void setPartialRent(double partialRent) {
+		this.partialRent = partialRent;
+	}
+
+
+
+	public Date getPartialRentDate() {
+		return partialRentDate;
+	}
+
+
+
+	public void setPartialRentDate(Date partialRentDate) {
+		this.partialRentDate = partialRentDate;
+	}
+
+
+
+	public Date getPartialRentFrom() {
+		return partialRentFrom;
+	}
+
+
+
+	public void setPartialRentFrom(Date partialRentFrom) {
+		this.partialRentFrom = partialRentFrom;
+	}
+
+
+
+	public Date getPartialRentTo() {
+		return partialRentTo;
+	}
+
+
+
+	public void setPartialRentTo(Date partialRentTo) {
+		this.partialRentTo = partialRentTo;
+	}
+
+
+
+	public boolean isAdditionalTerms() {
+		return isAdditionalTerms;
+	}
+
+
+
+	public void setAdditionalTerms(boolean isAdditionalTerms) {
+		this.isAdditionalTerms = isAdditionalTerms;
+	}
+
+
+
+	public String getAdditionalTermsDoc() {
+		return additionalTermsDoc;
+	}
+
+
+
+	public void setAdditionalTermsDoc(String additionalTermsDoc) {
+		this.additionalTermsDoc = additionalTermsDoc;
+	}
+
+
+	
+
+	
+	
 	
     
 }
