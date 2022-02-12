@@ -37,7 +37,7 @@ public class Maintenance {
 	private double cost;
 	@CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created_at", nullable = false)
+	@Column(name = "created_at", nullable = false, updatable = false)
 	private Date created_at;
 	private Date approvedOn;
 	private Date finishOn;

@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -27,6 +28,7 @@ public class Contract {
 	private long contractId;
 	
 	@OneToMany(mappedBy = "contract")
+	@OrderBy("tenantOrder")
 	private List<Tenant> tenants;
 	
 	private long rentalEntityId;
@@ -154,9 +156,12 @@ public class Contract {
 	private boolean subscription;
 	private String landLordId;
 	
+	@Enumerated(EnumType.STRING)
+	private AgreementPDFStatus agreementPDF;
+	
 	@CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created_at", nullable = false)
+	@Column(name = "created_at", nullable = false, updatable = false)
     private Date createdAt;
 
 
@@ -1166,6 +1171,18 @@ public class Contract {
 
 	public void setAdditionalTermsDoc(String additionalTermsDoc) {
 		this.additionalTermsDoc = additionalTermsDoc;
+	}
+
+
+
+	public AgreementPDFStatus getAgreementPDF() {
+		return agreementPDF;
+	}
+
+
+
+	public void setAgreementPDF(AgreementPDFStatus agreementPDF) {
+		this.agreementPDF = agreementPDF;
 	}
 
 

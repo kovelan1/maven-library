@@ -23,8 +23,12 @@ public class LeadData {
 	private String name;
 	private String email;
 	private String mobile;
+	private String source;
+	@Column(columnDefinition = "LONGTEXT")
+	private String message;
 	private String property;
 	private String rentalEntity;
+	
 	@CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at", nullable = false)
@@ -39,18 +43,25 @@ public class LeadData {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public LeadData(long id, String name, String email, String mobile,String rentalEntity,String property,Date createdAt, Date updatedAt,boolean transfer) {
-		
+	
+
+	public LeadData(long id, String name, String email, String mobile, String source, String message, String property,
+			String rentalEntity, Date createdAt, boolean transfer, Date updatedAt) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.mobile = mobile;
-		this.rentalEntity=rentalEntity;
-		this.property=property;
+		this.source = source;
+		this.message = message;
+		this.property = property;
+		this.rentalEntity = rentalEntity;
 		this.createdAt = createdAt;
+		this.transfer = transfer;
 		this.updatedAt = updatedAt;
-		this.transfer=transfer;
 	}
+
+
 
 	public long getId() {
 		return id;
@@ -122,6 +133,22 @@ public class LeadData {
 
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
+	}
+
+	public String getSource() {
+		return source;
+	}
+
+	public void setSource(String source) {
+		this.source = source;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 	
 	

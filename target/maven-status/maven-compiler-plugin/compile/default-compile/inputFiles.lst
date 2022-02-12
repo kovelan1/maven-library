@@ -17,9 +17,11 @@
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/notification/NotificationRequest.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/models/Address.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/user/LeadData.java
+/Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/contract/AgreementPDFStatus.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/contract/PetChargeMethod.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/application/OtherOccupant.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/propertiy/PropertyType.java
+/Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/payment/PaymentRecord.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/application/BusinessOwners.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/contract/LateFeeCharging.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/application/Application.java
@@ -39,6 +41,7 @@
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/user/Permission.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/common/ErrorResponse.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/application/ApplicationStatus.java
+/Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/contract/VerificationToken.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/propertiy/dto/RentalEnityIgPropDTO.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/common/UserDetails.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/user/AuthProvider.java
@@ -49,6 +52,8 @@
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/user/UserDetails.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/maintenance/ResponseStatus.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/application/ApplicationType.java
+/Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/contract/SubscriptionRequestDTO.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/payment/ApplicationFeeModel.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/propertiy/Property.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/notification/Notification.java
+/Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/payment/BulkPaymentRequest.java

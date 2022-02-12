@@ -14,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -45,12 +46,14 @@ public class RentalEntity implements Serializable{
 	private Status status;
 	
 	private String listingHeading;
-	private int fullRooms;
-	private int halfRooms;
-	private int bedRooms;
-	private int bathroomsAttach;
-	private int bathroomsSeparate;
-	private int sqFeet;
+	private Date availableFrom;
+	private String fullRooms;
+	private String halfRooms;
+	private String bedRooms;
+	private String bathroomsAttach;
+	private String bathroomsSeparate;
+	private String sqFeet;
+	@Column(columnDefinition = "LONGTEXT")
 	private String description;
 	private String petPolicy;
 	private boolean smoking;
@@ -75,7 +78,7 @@ public class RentalEntity implements Serializable{
 	private boolean outDoorGarden;
 	
 	private String washerDrier;
-	private String Basement;
+	private String basement;
 	private boolean wheelChair;
 	private boolean gym;
 	private boolean airConditioner;
@@ -88,7 +91,29 @@ public class RentalEntity implements Serializable{
 	private boolean storage ;
 	private boolean gas;
 	private boolean laundry ;
+	private boolean microwave ;
+	private boolean refrigerator ;
+	private boolean oven;
 	private boolean guestParking;
+	private boolean freezer;
+	private boolean trashCompactor;
+	private boolean garbageDisposal;
+	private boolean coolingCentral;
+	private boolean coolingEvaporative;
+	private boolean coolingGeothermal;
+	private boolean coolingRefrigeration;
+	private boolean coolingSolar;
+	private boolean coolingWall;
+	private boolean coolingOther;
+	private boolean heatingBaseboard;
+	private boolean heatingForcedAir;
+	private boolean heatingGeothermal;
+	private boolean heatingHeatPump;
+	private boolean heatingRadiant;
+	private boolean heatingStove;
+	private boolean heatingWall;
+	private boolean heatingOther;
+	private String laundryType;
 	
 	
 	private String walkInTime;
@@ -97,14 +122,14 @@ public class RentalEntity implements Serializable{
 	private double rent;
 	private double securityDeposit;
 	private double keyDeposit;
-	private int leasePeriod;
+	private String leasePeriod;
 	private boolean securityChk;
 	private boolean backgroundChk;
 	private String imageLink;
 	private String link;
 	@CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created_at", nullable = false)
+	@Column(name = "created_at", nullable = false, updatable = false)
     private Date createdAt;
 
 
@@ -115,23 +140,41 @@ public class RentalEntity implements Serializable{
 	
 	public RentalEntity() {}
 
-	public RentalEntity(Long id, Property property, String unitName, String unitType, Status status,
-			String listingHeading, int fullRooms, int halfRooms, int bedRooms, int bathroomsAttach,
-			int bathroomsSeparate, int sqFeet, String description, String petPolicy, boolean furnisher,
-			boolean parkingGarage, boolean parkingOnStreet, boolean parkingDriveway, boolean parkingPrivateLot,
-			boolean parkingDedicatedSpot, boolean parkingCovered, boolean outDoorSharedYard, boolean outDoorPrivateYard,
-			boolean outDoorPatio, boolean outDoorBalcony, boolean outDoorGarden, String washerDrier, String basement,
-			boolean wheelChair, boolean gym, boolean airConditioner, boolean hardwoodFloors, boolean fireplace,
-			boolean dishwasher, boolean walkInCloset, boolean pool, boolean hotTub, boolean storage, String walkInTime,
-			String walkInDate, String amenities, double rent, double securityDeposit, int leasePeriod,
-			boolean securityChk, boolean backgroundChk, String imageLink, String link, Date createdAt, Date updatedAt,List<ViewingTime> viewingTimes) {
+
+	
+
+
+
+
+
+
+	public RentalEntity(Long id, Property property, List<ViewingTime> viewingTimes, String unitName, String unitType,
+			Status status, String listingHeading, Date availableFrom, String fullRooms, String halfRooms,
+			String bedRooms, String bathroomsAttach, String bathroomsSeparate, String sqFeet, String description,
+			String petPolicy, boolean smoking, boolean furnisher, boolean parkingGarage, boolean parkingOnStreet,
+			boolean parkingDriveway, boolean parkingPrivateLot, boolean parkingDedicatedSpot, boolean parking,
+			boolean parkingCovered, String parkingDescription, double parkingFee, boolean outDoorSharedYard,
+			boolean outDoorPrivateYard, boolean outDoorPatio, boolean outDoorBalcony, boolean outDoorGarden,
+			String washerDrier, String basement, boolean wheelChair, boolean gym, boolean airConditioner,
+			boolean hardwoodFloors, boolean fireplace, boolean dishwasher, boolean walkInCloset, boolean pool,
+			boolean hotTub, boolean storage, boolean gas, boolean laundry, boolean microwave, boolean refrigerator,
+			boolean oven, boolean guestParking, boolean freezer, boolean trashCompactor, boolean garbageDisposal,
+			boolean coolingCentral, boolean coolingEvaporative, boolean coolingGeothermal, boolean coolingRefrigeration,
+			boolean coolingSolar, boolean coolingWall, boolean coolingOther, boolean heatingBaseboard,
+			boolean heatingForcedAir, boolean heatingGeothermal, boolean heatingHeatPump, boolean heatingRadiant,
+			boolean heatingStove, boolean heatingWall, boolean heatingOther, String laundryType, String walkInTime,
+			String walkInDate, String amenities, double rent, double securityDeposit, double keyDeposit,
+			String leasePeriod, boolean securityChk, boolean backgroundChk, String imageLink, String link,
+			Date createdAt, Date updatedAt) {
 		super();
 		this.id = id;
 		this.property = property;
+		this.viewingTimes = viewingTimes;
 		this.unitName = unitName;
 		this.unitType = unitType;
 		this.status = status;
 		this.listingHeading = listingHeading;
+		this.availableFrom = availableFrom;
 		this.fullRooms = fullRooms;
 		this.halfRooms = halfRooms;
 		this.bedRooms = bedRooms;
@@ -140,20 +183,24 @@ public class RentalEntity implements Serializable{
 		this.sqFeet = sqFeet;
 		this.description = description;
 		this.petPolicy = petPolicy;
+		this.smoking = smoking;
 		this.furnisher = furnisher;
 		this.parkingGarage = parkingGarage;
 		this.parkingOnStreet = parkingOnStreet;
 		this.parkingDriveway = parkingDriveway;
 		this.parkingPrivateLot = parkingPrivateLot;
 		this.parkingDedicatedSpot = parkingDedicatedSpot;
+		this.parking = parking;
 		this.parkingCovered = parkingCovered;
+		this.parkingDescription = parkingDescription;
+		this.parkingFee = parkingFee;
 		this.outDoorSharedYard = outDoorSharedYard;
 		this.outDoorPrivateYard = outDoorPrivateYard;
 		this.outDoorPatio = outDoorPatio;
 		this.outDoorBalcony = outDoorBalcony;
 		this.outDoorGarden = outDoorGarden;
 		this.washerDrier = washerDrier;
-		Basement = basement;
+		this.basement = basement;
 		this.wheelChair = wheelChair;
 		this.gym = gym;
 		this.airConditioner = airConditioner;
@@ -164,11 +211,37 @@ public class RentalEntity implements Serializable{
 		this.pool = pool;
 		this.hotTub = hotTub;
 		this.storage = storage;
+		this.gas = gas;
+		this.laundry = laundry;
+		this.microwave = microwave;
+		this.refrigerator = refrigerator;
+		this.oven = oven;
+		this.guestParking = guestParking;
+		this.freezer = freezer;
+		this.trashCompactor = trashCompactor;
+		this.garbageDisposal = garbageDisposal;
+		this.coolingCentral = coolingCentral;
+		this.coolingEvaporative = coolingEvaporative;
+		this.coolingGeothermal = coolingGeothermal;
+		this.coolingRefrigeration = coolingRefrigeration;
+		this.coolingSolar = coolingSolar;
+		this.coolingWall = coolingWall;
+		this.coolingOther = coolingOther;
+		this.heatingBaseboard = heatingBaseboard;
+		this.heatingForcedAir = heatingForcedAir;
+		this.heatingGeothermal = heatingGeothermal;
+		this.heatingHeatPump = heatingHeatPump;
+		this.heatingRadiant = heatingRadiant;
+		this.heatingStove = heatingStove;
+		this.heatingWall = heatingWall;
+		this.heatingOther = heatingOther;
+		this.laundryType = laundryType;
 		this.walkInTime = walkInTime;
 		this.walkInDate = walkInDate;
 		this.amenities = amenities;
 		this.rent = rent;
 		this.securityDeposit = securityDeposit;
+		this.keyDeposit = keyDeposit;
 		this.leasePeriod = leasePeriod;
 		this.securityChk = securityChk;
 		this.backgroundChk = backgroundChk;
@@ -176,8 +249,15 @@ public class RentalEntity implements Serializable{
 		this.link = link;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
-		this.viewingTimes=viewingTimes;
 	}
+
+
+
+
+
+
+
+
 
 	public Long getId() {
 		return id;
@@ -227,54 +307,7 @@ public class RentalEntity implements Serializable{
 		this.listingHeading = listingHeading;
 	}
 
-	public int getFullRooms() {
-		return fullRooms;
-	}
-
-	public void setFullRooms(int fullRooms) {
-		this.fullRooms = fullRooms;
-	}
-
-	public int getHalfRooms() {
-		return halfRooms;
-	}
-
-	public void setHalfRooms(int halfRooms) {
-		this.halfRooms = halfRooms;
-	}
-
-	public int getBedRooms() {
-		return bedRooms;
-	}
-
-	public void setBedRooms(int bedRooms) {
-		this.bedRooms = bedRooms;
-	}
-
-	public int getBathroomsAttach() {
-		return bathroomsAttach;
-	}
-
-	public void setBathroomsAttach(int bathroomsAttach) {
-		this.bathroomsAttach = bathroomsAttach;
-	}
-
-	public int getBathroomsSeparate() {
-		return bathroomsSeparate;
-	}
-
-	public void setBathroomsSeparate(int bathroomsSeparate) {
-		this.bathroomsSeparate = bathroomsSeparate;
-	}
-
-	public int getSqFeet() {
-		return sqFeet;
-	}
-
-	public void setSqFeet(int sqFeet) {
-		this.sqFeet = sqFeet;
-	}
-
+	
 	public String getDescription() {
 		return description;
 	}
@@ -396,11 +429,11 @@ public class RentalEntity implements Serializable{
 	}
 
 	public String getBasement() {
-		return Basement;
+		return basement;
 	}
 
 	public void setBasement(String basement) {
-		Basement = basement;
+		this.basement = basement;
 	}
 
 	public boolean isWheelChair() {
@@ -523,11 +556,11 @@ public class RentalEntity implements Serializable{
 		this.securityDeposit = securityDeposit;
 	}
 
-	public int getLeasePeriod() {
+	public String getLeasePeriod() {
 		return leasePeriod;
 	}
 
-	public void setLeasePeriod(int leasePeriod) {
+	public void setLeasePeriod(String leasePeriod) {
 		this.leasePeriod = leasePeriod;
 	}
 
@@ -651,6 +684,563 @@ public class RentalEntity implements Serializable{
 		this.keyDeposit = keyDeposit;
 	}
 
+
+
+	public Date getAvailableFrom() {
+		return availableFrom;
+	}
+
+
+
+	public void setAvailableFrom(Date availableFrom) {
+		this.availableFrom = availableFrom;
+	}
+
+
+
+	public String getFullRooms() {
+		return fullRooms;
+	}
+
+
+
+	public void setFullRooms(String fullRooms) {
+		this.fullRooms = fullRooms;
+	}
+
+
+
+	public String getHalfRooms() {
+		return halfRooms;
+	}
+
+
+
+	public void setHalfRooms(String halfRooms) {
+		this.halfRooms = halfRooms;
+	}
+
+
+
+	public String getBedRooms() {
+		return bedRooms;
+	}
+
+
+
+	public void setBedRooms(String bedRooms) {
+		this.bedRooms = bedRooms;
+	}
+
+
+
+	public String getBathroomsAttach() {
+		return bathroomsAttach;
+	}
+
+
+
+	public void setBathroomsAttach(String bathroomsAttach) {
+		this.bathroomsAttach = bathroomsAttach;
+	}
+
+
+
+	public String getBathroomsSeparate() {
+		return bathroomsSeparate;
+	}
+
+
+
+	public void setBathroomsSeparate(String bathroomsSeparate) {
+		this.bathroomsSeparate = bathroomsSeparate;
+	}
+
+
+
+	public String getSqFeet() {
+		return sqFeet;
+	}
+
+
+
+	public void setSqFeet(String sqFeet) {
+		this.sqFeet = sqFeet;
+	}
+
+
+	public boolean isMicrowave() {
+		return microwave;
+	}
+
+
+	public void setMicrowave(boolean microwave) {
+		this.microwave = microwave;
+	}
+
+
+	public boolean isRefrigerator() {
+		return refrigerator;
+	}
+
+
+	public void setRefrigerator(boolean refrigerator) {
+		this.refrigerator = refrigerator;
+	}
+
+
+	public boolean isOven() {
+		return oven;
+	}
+
+
+	public void setOven(boolean oven) {
+		this.oven = oven;
+	}
+
+
+	public String getLaundryType() {
+		return laundryType;
+	}
+
+
+	public void setLaundryType(String laundryType) {
+		this.laundryType = laundryType;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isFreezer() {
+		return freezer;
+	}
+
+
+
+
+
+
+
+
+
+	public void setFreezer(boolean freezer) {
+		this.freezer = freezer;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isTrashCompactor() {
+		return trashCompactor;
+	}
+
+
+
+
+
+
+
+
+
+	public void setTrashCompactor(boolean trashCompactor) {
+		this.trashCompactor = trashCompactor;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isGarbageDisposal() {
+		return garbageDisposal;
+	}
+
+
+
+
+
+
+
+
+
+	public void setGarbageDisposal(boolean garbageDisposal) {
+		this.garbageDisposal = garbageDisposal;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isCoolingCentral() {
+		return coolingCentral;
+	}
+
+
+
+
+
+
+
+
+
+	public void setCoolingCentral(boolean coolingCentral) {
+		this.coolingCentral = coolingCentral;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isCoolingEvaporative() {
+		return coolingEvaporative;
+	}
+
+
+
+
+
+
+
+
+
+	public void setCoolingEvaporative(boolean coolingEvaporative) {
+		this.coolingEvaporative = coolingEvaporative;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isCoolingGeothermal() {
+		return coolingGeothermal;
+	}
+
+
+
+
+
+
+
+
+
+	public void setCoolingGeothermal(boolean coolingGeothermal) {
+		this.coolingGeothermal = coolingGeothermal;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isCoolingRefrigeration() {
+		return coolingRefrigeration;
+	}
+
+
+
+
+
+
+
+
+
+	public void setCoolingRefrigeration(boolean coolingRefrigeration) {
+		this.coolingRefrigeration = coolingRefrigeration;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isCoolingSolar() {
+		return coolingSolar;
+	}
+
+
+
+
+
+
+
+
+
+	public void setCoolingSolar(boolean coolingSolar) {
+		this.coolingSolar = coolingSolar;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isCoolingWall() {
+		return coolingWall;
+	}
+
+
+
+
+
+
+
+
+
+	public void setCoolingWall(boolean coolingWall) {
+		this.coolingWall = coolingWall;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isCoolingOther() {
+		return coolingOther;
+	}
+
+
+
+
+
+
+
+
+
+	public void setCoolingOther(boolean coolingOther) {
+		this.coolingOther = coolingOther;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isHeatingBaseboard() {
+		return heatingBaseboard;
+	}
+
+
+
+
+
+
+
+
+
+	public void setHeatingBaseboard(boolean heatingBaseboard) {
+		this.heatingBaseboard = heatingBaseboard;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isHeatingForcedAir() {
+		return heatingForcedAir;
+	}
+
+
+
+
+
+
+
+
+
+	public void setHeatingForcedAir(boolean heatingForcedAir) {
+		this.heatingForcedAir = heatingForcedAir;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isHeatingGeothermal() {
+		return heatingGeothermal;
+	}
+
+
+
+
+
+
+
+
+
+	public void setHeatingGeothermal(boolean heatingGeothermal) {
+		this.heatingGeothermal = heatingGeothermal;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isHeatingHeatPump() {
+		return heatingHeatPump;
+	}
+
+
+
+
+
+
+
+
+
+	public void setHeatingHeatPump(boolean heatingHeatPump) {
+		this.heatingHeatPump = heatingHeatPump;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isHeatingRadiant() {
+		return heatingRadiant;
+	}
+
+
+
+
+
+
+
+
+
+	public void setHeatingRadiant(boolean heatingRadiant) {
+		this.heatingRadiant = heatingRadiant;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isHeatingStove() {
+		return heatingStove;
+	}
+
+
+
+
+
+
+
+
+
+	public void setHeatingStove(boolean heatingStove) {
+		this.heatingStove = heatingStove;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isHeatingWall() {
+		return heatingWall;
+	}
+
+
+
+
+
+
+
+
+
+	public void setHeatingWall(boolean heatingWall) {
+		this.heatingWall = heatingWall;
+	}
+
+
+
+
+
+
+
+
+
+	public boolean isHeatingOther() {
+		return heatingOther;
+	}
+
+
+
+
+
+
+
+
+
+	public void setHeatingOther(boolean heatingOther) {
+		this.heatingOther = heatingOther;
+	}
+
+	
 	
 	
 }

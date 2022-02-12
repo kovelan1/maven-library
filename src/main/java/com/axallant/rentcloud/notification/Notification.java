@@ -32,7 +32,7 @@ public class Notification {
 	
 	@CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created_at", nullable = false)
+	@Column(name = "created_at", nullable = false, updatable = false)
     private Date createdAt;
 	
 	public Notification() {}

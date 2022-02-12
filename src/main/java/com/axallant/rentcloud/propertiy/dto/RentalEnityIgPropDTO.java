@@ -17,12 +17,12 @@ public class RentalEnityIgPropDTO {
 	private Status status;
 	
 	private String listingHeading;
-	private int fullRooms;
-	private int halfRooms;
-	private int bedRooms;
-	private int bathroomsAttach;
-	private int bathroomsSeparate;
-	private int sqFeet;
+	private String fullRooms;
+	private String halfRooms;
+	private String bedRooms;
+	private String bathroomsAttach;
+	private String bathroomsSeparate;
+	private String sqFeet;
 	private String description;
 	private String petPolicy;
 	private boolean furnisher;
@@ -51,16 +51,41 @@ public class RentalEnityIgPropDTO {
 	private boolean pool;
 	private boolean hotTub ;
 	private boolean storage ;
+	private boolean laundry ;
+	private boolean microwave ;
+	private boolean refrigerator ;
+	private boolean oven;
 	private String walkInTime;
 	private String walkInDate;
 	private String amenities;
 	private double rent;
 	private double securityDeposit;
-	private int leasePeriod;
+	private String leasePeriod;
 	private boolean securityChk;
 	private boolean backgroundChk;
 	private String imageLink;
 	private String link;
+	private String laundryType;
+	
+	private boolean freezer;
+	private boolean trashCompactor;
+	private boolean garbageDisposal;
+	private boolean coolingCentral;
+	private boolean coolingEvaporative;
+	private boolean coolingGeothermal;
+	private boolean coolingRefrigeration;
+	private boolean coolingSolar;
+	private boolean coolingWall;
+	private boolean coolingOther;
+	private boolean heatingBaseboard;
+	private boolean heatingForcedAir;
+	private boolean heatingGeothermal;
+	private boolean heatingHeatPump;
+	private boolean heatingRadiant;
+	private boolean heatingStove;
+	private boolean heatingWall;
+	private boolean heatingOther;
+	
 	private Date createdAt;
 	private Date updatedAt;
 	
@@ -104,6 +129,27 @@ public class RentalEnityIgPropDTO {
 					rentalEntity.isPool(), 
 					rentalEntity.isHotTub(), 
 					rentalEntity.isStorage(), 
+					rentalEntity.isMicrowave(),
+					rentalEntity.isRefrigerator(),
+					rentalEntity.isOven(),
+					rentalEntity.isFreezer(),
+					rentalEntity.isTrashCompactor(),
+					rentalEntity.isGarbageDisposal(),
+					rentalEntity.isCoolingCentral(),
+					rentalEntity.isCoolingEvaporative(),
+					rentalEntity.isCoolingGeothermal(),
+					rentalEntity.isCoolingRefrigeration(),
+					rentalEntity.isCoolingSolar(),
+					rentalEntity.isCoolingWall(),
+					rentalEntity.isCoolingOther(),
+					rentalEntity.isHeatingBaseboard(),
+					rentalEntity.isHeatingForcedAir(),
+					rentalEntity.isHeatingGeothermal(),
+					rentalEntity.isHeatingHeatPump(),
+					rentalEntity.isHeatingRadiant(),
+					rentalEntity.isHeatingStove(),
+					rentalEntity.isHeatingWall(),
+					rentalEntity.isHeatingOther(),
 					rentalEntity.getWalkInTime(), 
 					rentalEntity.getWalkInDate(), 
 					rentalEntity.getAmenities(), 
@@ -114,21 +160,30 @@ public class RentalEnityIgPropDTO {
 					rentalEntity.isBackgroundChk(), 
 					rentalEntity.getImageLink(), 
 					rentalEntity.getLink(), 
+					rentalEntity.getLaundryType(),
 					rentalEntity.getCreatedAt(), 
 					rentalEntity.getUpdatedAt(), 
 					rentalEntity.getViewingTimes());
+		
 	}
 
 	public RentalEnityIgPropDTO(Long id, String unitName, String unitType, Status status,
-			String listingHeading, int fullRooms, int halfRooms, int bedRooms, int bathroomsAttach,
-			int bathroomsSeparate, int sqFeet, String description, String petPolicy, boolean furnisher,
+			String listingHeading, String fullRooms, String halfRooms, String bedRooms, String bathroomsAttach,
+			String bathroomsSeparate, String sqFeet, String description, String petPolicy, boolean furnisher,
 			boolean parkingGarage, boolean parkingOnStreet, boolean parkingDriveway, boolean parkingPrivateLot,
 			boolean parkingDedicatedSpot, boolean parkingCovered, boolean outDoorSharedYard, boolean outDoorPrivateYard,
 			boolean outDoorPatio, boolean outDoorBalcony, boolean outDoorGarden, String washerDrier, String basement,
 			boolean wheelChair, boolean gym, boolean airConditioner, boolean hardwoodFloors, boolean fireplace,
-			boolean dishwasher, boolean walkInCloset, boolean pool, boolean hotTub, boolean storage, String walkInTime,
-			String walkInDate, String amenities, double rent, double securityDeposit, int leasePeriod,
-			boolean securityChk, boolean backgroundChk, String imageLink, String link, Date createdAt, Date updatedAt,List<ViewingTime> viewingTimes) {
+			boolean dishwasher, boolean walkInCloset, boolean pool, boolean hotTub, boolean storage,boolean microwave, boolean refrigerator,
+			boolean oven, 
+			boolean freezer, boolean trashCompactor, boolean garbageDisposal,
+			boolean coolingCentral, boolean coolingEvaporative, boolean coolingGeothermal, boolean coolingRefrigeration,
+			boolean coolingSolar, boolean coolingWall, boolean coolingOther, boolean heatingBaseboard,
+			boolean heatingForcedAir, boolean heatingGeothermal, boolean heatingHeatPump, boolean heatingRadiant,
+			boolean heatingStove, boolean heatingWall, boolean heatingOther,
+			String walkInTime,
+			String walkInDate, String amenities, double rent, double securityDeposit, String leasePeriod,
+			boolean securityChk, boolean backgroundChk, String imageLink, String link,String laundryType, Date createdAt, Date updatedAt,List<ViewingTime> viewingTimes) {
 		super();
 		this.id = id;
 		this.unitName = unitName;
@@ -167,6 +222,9 @@ public class RentalEnityIgPropDTO {
 		this.pool = pool;
 		this.hotTub = hotTub;
 		this.storage = storage;
+		this.microwave=microwave;
+		this.oven=oven;
+		this.refrigerator=refrigerator;
 		this.walkInTime = walkInTime;
 		this.walkInDate = walkInDate;
 		this.amenities = amenities;
@@ -177,6 +235,7 @@ public class RentalEnityIgPropDTO {
 		this.backgroundChk = backgroundChk;
 		this.imageLink = imageLink;
 		this.link = link;
+		this.laundryType=laundryType;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 		this.viewingTimes=viewingTimes;
@@ -222,51 +281,53 @@ public class RentalEnityIgPropDTO {
 		this.listingHeading = listingHeading;
 	}
 
-	public int getFullRooms() {
+	
+
+	public String getFullRooms() {
 		return fullRooms;
 	}
 
-	public void setFullRooms(int fullRooms) {
+	public void setFullRooms(String fullRooms) {
 		this.fullRooms = fullRooms;
 	}
 
-	public int getHalfRooms() {
+	public String getHalfRooms() {
 		return halfRooms;
 	}
 
-	public void setHalfRooms(int halfRooms) {
+	public void setHalfRooms(String halfRooms) {
 		this.halfRooms = halfRooms;
 	}
 
-	public int getBedRooms() {
+	public String getBedRooms() {
 		return bedRooms;
 	}
 
-	public void setBedRooms(int bedRooms) {
+	public void setBedRooms(String bedRooms) {
 		this.bedRooms = bedRooms;
 	}
 
-	public int getBathroomsAttach() {
+	public String getBathroomsAttach() {
 		return bathroomsAttach;
 	}
 
-	public void setBathroomsAttach(int bathroomsAttach) {
+	public void setBathroomsAttach(String bathroomsAttach) {
 		this.bathroomsAttach = bathroomsAttach;
 	}
 
-	public int getBathroomsSeparate() {
+	public String getBathroomsSeparate() {
 		return bathroomsSeparate;
 	}
 
-	public void setBathroomsSeparate(int bathroomsSeparate) {
+	public void setBathroomsSeparate(String bathroomsSeparate) {
 		this.bathroomsSeparate = bathroomsSeparate;
 	}
 
-	public int getSqFeet() {
+	public String getSqFeet() {
 		return sqFeet;
 	}
 
-	public void setSqFeet(int sqFeet) {
+	public void setSqFeet(String sqFeet) {
 		this.sqFeet = sqFeet;
 	}
 
@@ -518,11 +579,11 @@ public class RentalEnityIgPropDTO {
 		this.securityDeposit = securityDeposit;
 	}
 
-	public int getLeasePeriod() {
+	public String getLeasePeriod() {
 		return leasePeriod;
 	}
 
-	public void setLeasePeriod(int leasePeriod) {
+	public void setLeasePeriod(String leasePeriod) {
 		this.leasePeriod = leasePeriod;
 	}
 
@@ -581,5 +642,192 @@ public class RentalEnityIgPropDTO {
 	public void setViewingTimes(List<ViewingTime> viewingTimes) {
 		this.viewingTimes = viewingTimes;
 	}
+
+	public boolean isLaundry() {
+		return laundry;
+	}
+
+	public void setLaundry(boolean laundry) {
+		this.laundry = laundry;
+	}
+
+	public boolean isMicrowave() {
+		return microwave;
+	}
+
+	public void setMicrowave(boolean microwave) {
+		this.microwave = microwave;
+	}
+
+	public boolean isRefrigerator() {
+		return refrigerator;
+	}
+
+	public void setRefrigerator(boolean refrigerator) {
+		this.refrigerator = refrigerator;
+	}
+
+	public boolean isOven() {
+		return oven;
+	}
+
+	public void setOven(boolean oven) {
+		this.oven = oven;
+	}
+
+	public String getLaundryType() {
+		return laundryType;
+	}
+
+	public void setLaundryType(String laundryType) {
+		this.laundryType = laundryType;
+	}
+
+	public boolean isFreezer() {
+		return freezer;
+	}
+
+	public void setFreezer(boolean freezer) {
+		this.freezer = freezer;
+	}
+
+	public boolean isTrashCompactor() {
+		return trashCompactor;
+	}
+
+	public void setTrashCompactor(boolean trashCompactor) {
+		this.trashCompactor = trashCompactor;
+	}
+
+	public boolean isGarbageDisposal() {
+		return garbageDisposal;
+	}
+
+	public void setGarbageDisposal(boolean garbageDisposal) {
+		this.garbageDisposal = garbageDisposal;
+	}
+
+	public boolean isCoolingCentral() {
+		return coolingCentral;
+	}
+
+	public void setCoolingCentral(boolean coolingCentral) {
+		this.coolingCentral = coolingCentral;
+	}
+
+	public boolean isCoolingEvaporative() {
+		return coolingEvaporative;
+	}
+
+	public void setCoolingEvaporative(boolean coolingEvaporative) {
+		this.coolingEvaporative = coolingEvaporative;
+	}
+
+	public boolean isCoolingGeothermal() {
+		return coolingGeothermal;
+	}
+
+	public void setCoolingGeothermal(boolean coolingGeothermal) {
+		this.coolingGeothermal = coolingGeothermal;
+	}
+
+	public boolean isCoolingRefrigeration() {
+		return coolingRefrigeration;
+	}
+
+	public void setCoolingRefrigeration(boolean coolingRefrigeration) {
+		this.coolingRefrigeration = coolingRefrigeration;
+	}
+
+	public boolean isCoolingSolar() {
+		return coolingSolar;
+	}
+
+	public void setCoolingSolar(boolean coolingSolar) {
+		this.coolingSolar = coolingSolar;
+	}
+
+	public boolean isCoolingWall() {
+		return coolingWall;
+	}
+
+	public void setCoolingWall(boolean coolingWall) {
+		this.coolingWall = coolingWall;
+	}
+
+	public boolean isCoolingOther() {
+		return coolingOther;
+	}
+
+	public void setCoolingOther(boolean coolingOther) {
+		this.coolingOther = coolingOther;
+	}
+
+	public boolean isHeatingBaseboard() {
+		return heatingBaseboard;
+	}
+
+	public void setHeatingBaseboard(boolean heatingBaseboard) {
+		this.heatingBaseboard = heatingBaseboard;
+	}
+
+	public boolean isHeatingForcedAir() {
+		return heatingForcedAir;
+	}
+
+	public void setHeatingForcedAir(boolean heatingForcedAir) {
+		this.heatingForcedAir = heatingForcedAir;
+	}
+
+	public boolean isHeatingGeothermal() {
+		return heatingGeothermal;
+	}
+
+	public void setHeatingGeothermal(boolean heatingGeothermal) {
+		this.heatingGeothermal = heatingGeothermal;
+	}
+
+	public boolean isHeatingHeatPump() {
+		return heatingHeatPump;
+	}
+
+	public void setHeatingHeatPump(boolean heatingHeatPump) {
+		this.heatingHeatPump = heatingHeatPump;
+	}
+
+	public boolean isHeatingRadiant() {
+		return heatingRadiant;
+	}
+
+	public void setHeatingRadiant(boolean heatingRadiant) {
+		this.heatingRadiant = heatingRadiant;
+	}
+
+	public boolean isHeatingStove() {
+		return heatingStove;
+	}
+
+	public void setHeatingStove(boolean heatingStove) {
+		this.heatingStove = heatingStove;
+	}
+
+	public boolean isHeatingWall() {
+		return heatingWall;
+	}
+
+	public void setHeatingWall(boolean heatingWall) {
+		this.heatingWall = heatingWall;
+	}
+
+	public boolean isHeatingOther() {
+		return heatingOther;
+	}
+
+	public void setHeatingOther(boolean heatingOther) {
+		this.heatingOther = heatingOther;
+	}
+	
+	
+	
 
 }

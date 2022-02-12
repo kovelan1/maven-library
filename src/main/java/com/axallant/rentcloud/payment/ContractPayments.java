@@ -1,6 +1,8 @@
 package com.axallant.rentcloud.payment;
 
 import java.time.LocalDateTime;
+import java.util.Date;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,16 +13,20 @@ public class ContractPayments {
 	private String type;
 	private double amount;
 	private LocalDateTime paymentDate;
+	private Date dueDate;
 	private String source;
 	private String payee;
 	private String payer;
 	private long contractId;
 	private String status;
 	
+	@Column(columnDefinition = "LONGTEXT")
+	private String receiptLink;
+	
 	public ContractPayments() {}
 
 	public ContractPayments(String contractPaymentId, String type, double amount, LocalDateTime paymentDate,
-			String source, String payee, String payer, long contractId, String status) {
+			String source, String payee, String payer, long contractId, String status,String receiptLink, Date dueDate) {
 		super();
 		this.contractPaymentId = contractPaymentId;
 		this.type = type;
@@ -31,6 +37,8 @@ public class ContractPayments {
 		this.payer = payer;
 		this.contractId = contractId;
 		this.status = status;
+		this.receiptLink=receiptLink;
+		this.dueDate=dueDate;
 	}
 
 	public String getContractPaymentId() {
@@ -105,6 +113,22 @@ public class ContractPayments {
 		this.status = status;
 	}
 
+	public String getReceiptLink() {
+		return receiptLink;
+	}
 
+	public void setReceiptLink(String receiptLink) {
+		this.receiptLink = receiptLink;
+	}
+
+	public Date getDueDate() {
+		return dueDate;
+	}
+
+	public void setDueDate(Date dueDate) {
+		this.dueDate = dueDate;
+	}
+
+	
 	
 }

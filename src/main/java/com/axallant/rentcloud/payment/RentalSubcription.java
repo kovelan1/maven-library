@@ -1,5 +1,8 @@
 package com.axallant.rentcloud.payment;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,8 +16,15 @@ public class RentalSubcription {
     private Long id;
 	
 	private String tenant;
+	
+	@Column(unique=true)
 	private long contractId;
 	private String subsciptionId;
+	private int paymentDay;
+	private Date startDate;
+	private Date endDate;
+	private int iteration;
+	
 	
 	public RentalSubcription() {
 		// TODO Auto-generated constructor stub

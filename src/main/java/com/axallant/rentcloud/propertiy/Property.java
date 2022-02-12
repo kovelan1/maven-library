@@ -41,10 +41,13 @@ public class Property {
 	private Address address;
 	private String aptUnit;
 	private String coverImage;
-	
+	private int applicationFee;
+	private int platformFee;
+	private boolean enable;
+	private String currency;
 	@CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created_at", nullable = false)
+	@Column(name = "created_at", nullable = false, updatable = false)
     private Date createdAt;
 
 
@@ -55,19 +58,29 @@ public class Property {
 	
 	public Property() {}
 
-	public Property(Long id, List<RentalEntity> rentalEntity, PropertyType type, Address address, String aptUnit,
-			String coverImage, Date createdAt, Date updatedAt, String name) {
+
+	public Property(Long id, String name, List<RentalEntity> rentalEntity, PropertyType type, Address address,
+			String aptUnit, String coverImage, int applicationFee, int platformFee, boolean enable, String currency,
+			Date createdAt, Date updatedAt) {
 		super();
 		this.id = id;
+		this.name = name;
 		this.rentalEntity = rentalEntity;
 		this.type = type;
 		this.address = address;
 		this.aptUnit = aptUnit;
 		this.coverImage = coverImage;
+		this.applicationFee = applicationFee;
+		this.platformFee = platformFee;
+		this.enable = enable;
+		this.currency = currency;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
-		this.name=name;
 	}
+
+
+
+
 
 	public Long getId() {
 		return id;
@@ -140,6 +153,52 @@ public class Property {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+
+
+	public int getApplicationFee() {
+		return applicationFee;
+	}
+
+
+
+	public void setApplicationFee(int applicationFee) {
+		this.applicationFee = applicationFee;
+	}
+
+
+
+	public int getPlatformFee() {
+		return platformFee;
+	}
+
+
+
+	public void setPlatformFee(int platformFee) {
+		this.platformFee = platformFee;
+	}
+
+
+
+	public boolean isEnable() {
+		return enable;
+	}
+
+
+
+	public void setEnable(boolean enable) {
+		this.enable = enable;
+	}
+
+
+	public String getCurrency() {
+		return currency;
+	}
+
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
 	}
 	
 	
