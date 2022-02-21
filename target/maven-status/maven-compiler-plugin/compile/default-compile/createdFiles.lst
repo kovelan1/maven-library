@@ -1,3 +1,4 @@
+com/axallant/rentcloud/contract/TenantDTO.class
 com/axallant/rentcloud/user/AuthProvider.class
 com/axallant/rentcloud/common/UserDetails.class
 com/axallant/rentcloud/payment/ApplicationFeeModel.class
@@ -18,6 +19,7 @@ com/axallant/rentcloud/models/Address.class
 com/axallant/rentcloud/payment/PaymentRecord.class
 com/axallant/rentcloud/propertiy/Status.class
 com/axallant/rentcloud/propertiy/Property.class
+com/axallant/rentcloud/contract/ContractFile.class
 com/axallant/rentcloud/application/Application.class
 com/axallant/rentcloud/application/BusinessOwners.class
 com/axallant/rentcloud/propertiy/ViewRenatlEntity.class

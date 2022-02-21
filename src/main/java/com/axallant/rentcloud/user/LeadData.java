@@ -150,6 +150,16 @@ public class LeadData {
 	public void setMessage(String message) {
 		this.message = message;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "LeadData [id=" + id + ", name=" + name + ", email=" + email + ", mobile=" + mobile + ", source="
+				+ source + ", message=" + message + ", property=" + property + ", rentalEntity=" + rentalEntity
+				+ ", createdAt=" + createdAt + ", transfer=" + transfer + ", updatedAt=" + updatedAt + "]";
+	}
+	
 	
 	
 }

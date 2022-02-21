@@ -24,7 +24,9 @@
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/payment/PaymentRecord.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/application/BusinessOwners.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/contract/LateFeeCharging.java
+/Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/contract/TenantDTO.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/application/Application.java
+/Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/contract/ContractFile.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/contract/CheckInOut.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/notification/NotifictionUserId.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/notification/Events.java

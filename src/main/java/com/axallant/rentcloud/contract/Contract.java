@@ -3,6 +3,7 @@ package com.axallant.rentcloud.contract;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -18,6 +19,7 @@ import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.annotations.Where;
 
 @Entity
 @Table(name = "contract")
@@ -172,6 +174,12 @@ public class Contract {
     
     private boolean isAdditionalTerms;
     private String additionalTermsDoc;
+    
+    @OneToMany(mappedBy = "contract", cascade = CascadeType.ALL)
+    @OrderBy("createdAt DESC")
+    @Where(clause = "deleted = false")
+	private List<ContractFile> contractFiles;
+    
     
     public Contract() {}
 
@@ -1183,6 +1191,18 @@ public class Contract {
 
 	public void setAgreementPDF(AgreementPDFStatus agreementPDF) {
 		this.agreementPDF = agreementPDF;
+	}
+
+
+
+	public List<ContractFile> getContractFiles() {
+		return contractFiles;
+	}
+
+
+
+	public void setContractFiles(List<ContractFile> contractFiles) {
+		this.contractFiles = contractFiles;
 	}
 
 
