@@ -46,6 +46,7 @@ com/axallant/rentcloud/application/Applicant.class
 com/axallant/rentcloud/application/ViewingRequest.class
 com/axallant/rentcloud/propertiy/ViewingTime.class
 com/axallant/rentcloud/contract/SubscriptionRequestDTO.class
+com/axallant/rentcloud/payment/PaymentDashboard.class
 com/axallant/rentcloud/application/CreditReference.class
 com/axallant/rentcloud/application/ApplicationStatus.class
 com/axallant/rentcloud/propertiy/LandLordProperty.class
@@ -55,6 +56,7 @@ com/axallant/rentcloud/contract/LateFeeCharging.class
 com/axallant/rentcloud/contractDTO/ContractWithRenatEntity.class
 com/axallant/rentcloud/application/Apply.class
 com/axallant/rentcloud/maintenance/ResponseStatus.class
+com/axallant/rentcloud/payment/PaymentSumaryMonth.class
 com/axallant/rentcloud/application/BusinessApplication.class
 com/axallant/rentcloud/notification/NotifictionUserId.class
 com/axallant/rentcloud/user/User.class

@@ -127,6 +127,9 @@ public class RentalEntity implements Serializable{
 	private boolean backgroundChk;
 	private String imageLink;
 	private String link;
+	private long contractId;
+	
+	
 	@CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "created_at", nullable = false, updatable = false)
@@ -1238,6 +1241,30 @@ public class RentalEntity implements Serializable{
 
 	public void setHeatingOther(boolean heatingOther) {
 		this.heatingOther = heatingOther;
+	}
+
+
+
+
+
+
+
+
+
+	public long getContractId() {
+		return contractId;
+	}
+
+
+
+
+
+
+
+
+
+	public void setContractId(long contractId) {
+		this.contractId = contractId;
 	}
 
 	

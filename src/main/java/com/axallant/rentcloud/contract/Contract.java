@@ -108,7 +108,8 @@ public class Contract {
 	private String waterResponsible;
 	@Column(columnDefinition = "LONGTEXT") 
 	private String otherResponsible; 
-	
+	private String sewerResponsible;
+	private String garbageResponsible;
 	
 	
 	private boolean moveEarly;
@@ -151,6 +152,17 @@ public class Contract {
 	private String serviceType1;
 	private String serviceType2;
 	private String serviceType3;
+	
+	private String smokeDetectionDevice; //hard_wired, battery
+	private boolean smokeDetectionFireSprinkler;
+	private boolean smokeDetectionFireAlarm;
+	private boolean smokeDetectionEmeNotifi;
+	private String smokeDetectionEmeNotifiFile;
+	private boolean smokeDetectionEmeRelocation;
+	private String smokeDetectionEmeRelocationFile;
+	private boolean smokeDetectionEmeEvacuation;
+	private String smokeDetectionEmeEvacuationFile;
+	
 	
 	@Column(columnDefinition = "LONGTEXT") 
 	private String serviceDescription; 
@@ -1206,10 +1218,137 @@ public class Contract {
 	}
 
 
-	
 
-	
-	
+	public String getSewerResponsible() {
+		return sewerResponsible;
+	}
+
+
+
+	public void setSewerResponsible(String sewerResponsible) {
+		this.sewerResponsible = sewerResponsible;
+	}
+
+
+
+	public String getGarbageResponsible() {
+		return garbageResponsible;
+	}
+
+
+
+	public void setGarbageResponsible(String garbageResponsible) {
+		this.garbageResponsible = garbageResponsible;
+	}
+
+
+
+	public String getSmokeDetectionDevice() {
+		return smokeDetectionDevice;
+	}
+
+
+
+	public void setSmokeDetectionDevice(String smokeDetectionDevice) {
+		this.smokeDetectionDevice = smokeDetectionDevice;
+	}
+
+
+
+	public boolean isSmokeDetectionFireSprinkler() {
+		return smokeDetectionFireSprinkler;
+	}
+
+
+
+	public void setSmokeDetectionFireSprinkler(boolean smokeDetectionFireSprinkler) {
+		this.smokeDetectionFireSprinkler = smokeDetectionFireSprinkler;
+	}
+
+
+
+	public boolean isSmokeDetectionFireAlarm() {
+		return smokeDetectionFireAlarm;
+	}
+
+
+
+	public void setSmokeDetectionFireAlarm(boolean smokeDetectionFireAlarm) {
+		this.smokeDetectionFireAlarm = smokeDetectionFireAlarm;
+	}
+
+
+
+	public boolean isSmokeDetectionEmeNotifi() {
+		return smokeDetectionEmeNotifi;
+	}
+
+
+
+	public void setSmokeDetectionEmeNotifi(boolean smokeDetectionEmeNotifi) {
+		this.smokeDetectionEmeNotifi = smokeDetectionEmeNotifi;
+	}
+
+
+
+	public String getSmokeDetectionEmeNotifiFile() {
+		return smokeDetectionEmeNotifiFile;
+	}
+
+
+
+	public void setSmokeDetectionEmeNotifiFile(String smokeDetectionEmeNotifiFile) {
+		this.smokeDetectionEmeNotifiFile = smokeDetectionEmeNotifiFile;
+	}
+
+
+
+	public boolean isSmokeDetectionEmeRelocation() {
+		return smokeDetectionEmeRelocation;
+	}
+
+
+
+	public void setSmokeDetectionEmeRelocation(boolean smokeDetectionEmeRelocation) {
+		this.smokeDetectionEmeRelocation = smokeDetectionEmeRelocation;
+	}
+
+
+
+	public String getSmokeDetectionEmeRelocationFile() {
+		return smokeDetectionEmeRelocationFile;
+	}
+
+
+
+	public void setSmokeDetectionEmeRelocationFile(String smokeDetectionEmeRelocationFile) {
+		this.smokeDetectionEmeRelocationFile = smokeDetectionEmeRelocationFile;
+	}
+
+
+
+	public boolean isSmokeDetectionEmeEvacuation() {
+		return smokeDetectionEmeEvacuation;
+	}
+
+
+
+	public void setSmokeDetectionEmeEvacuation(boolean smokeDetectionEmeEvacuation) {
+		this.smokeDetectionEmeEvacuation = smokeDetectionEmeEvacuation;
+	}
+
+
+
+	public String getSmokeDetectionEmeEvacuationFile() {
+		return smokeDetectionEmeEvacuationFile;
+	}
+
+
+
+	public void setSmokeDetectionEmeEvacuationFile(String smokeDetectionEmeEvacuationFile) {
+		this.smokeDetectionEmeEvacuationFile = smokeDetectionEmeEvacuationFile;
+	}
+
 	
     
 }

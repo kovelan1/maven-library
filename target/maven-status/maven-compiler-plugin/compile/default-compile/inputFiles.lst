@@ -1,3 +1,4 @@
+/Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/payment/PaymentSumaryMonth.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/contract/Tenant.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/propertiy/LandLordProperty.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/contract/Contract.java
@@ -14,6 +15,7 @@
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/contract/ViewingTime.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/propertiy/ViewingTime.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/maintenance/LandlordStatus.java
+/Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/payment/PaymentDashboard.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/notification/NotificationRequest.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/models/Address.java
 /Users/kovelanparameswaran/Documents/Spring/rentcloud-commons/src/main/java/com/axallant/rentcloud/user/LeadData.java
