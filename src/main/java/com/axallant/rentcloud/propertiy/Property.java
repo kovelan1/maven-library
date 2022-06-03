@@ -41,6 +41,8 @@ public class Property {
 	private Address address;
 	private String aptUnit;
 	private String coverImage;
+	private String managerName;
+	private String managerPhone;
 	private int applicationFee;
 	private int platformFee;
 	private boolean enable;
@@ -60,7 +62,7 @@ public class Property {
 
 
 	public Property(Long id, String name, List<RentalEntity> rentalEntity, PropertyType type, Address address,
-			String aptUnit, String coverImage, int applicationFee, int platformFee, boolean enable, String currency,
+			String aptUnit, String coverImage,String managerName,String managerPhone, int applicationFee, int platformFee, boolean enable, String currency,
 			Date createdAt, Date updatedAt) {
 		super();
 		this.id = id;
@@ -70,6 +72,8 @@ public class Property {
 		this.address = address;
 		this.aptUnit = aptUnit;
 		this.coverImage = coverImage;
+		this.managerName=managerName;
+		this.managerPhone=managerPhone;
 		this.applicationFee = applicationFee;
 		this.platformFee = platformFee;
 		this.enable = enable;
@@ -199,6 +203,26 @@ public class Property {
 
 	public void setCurrency(String currency) {
 		this.currency = currency;
+	}
+
+
+	public String getManagerName() {
+		return managerName;
+	}
+
+
+	public void setManagerName(String managerName) {
+		this.managerName = managerName;
+	}
+
+
+	public String getManagerPhone() {
+		return managerPhone;
+	}
+
+
+	public void setManagerPhone(String managerPhone) {
+		this.managerPhone = managerPhone;
 	}
 	
 	
