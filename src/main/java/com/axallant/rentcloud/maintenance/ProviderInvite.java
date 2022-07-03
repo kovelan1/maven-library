@@ -49,6 +49,8 @@ public class ProviderInvite extends CommonFields{
 	@Enumerated(EnumType.STRING)
 	private InviteMode inviteMode;
 	
+	private boolean enabled;
+	
 	private String token;
 	
 	@Column(columnDefinition = "LONGTEXT")
