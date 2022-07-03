@@ -22,6 +22,8 @@ public class PropertyDTO {
 	private Address address;
 	private String aptUnit;
 	private String coverImage;
+	private String managerName;
+	private String managerPhone;
     private Date createdAt;
     private Date updatedAt;
     private List<String> landlords;
@@ -42,12 +44,14 @@ public class PropertyDTO {
 				property.getAddress(), 
 				property.getAptUnit(), 
 				property.getCoverImage().orElse(""),
+				property.getManagerName(),
+				property.getManagerPhone(),
 				property.getCreatedAt(), 
 				property.getUpdatedAt());
 	}
 
 	public PropertyDTO(Long id,String name, List<RentalEnityIgPropDTO> rentalEntity, PropertyType type, Address address, String aptUnit,
-			String coverImage, Date createdAt, Date updatedAt) {
+			String coverImage,String managerName,String managerPhone, Date createdAt, Date updatedAt) {
 		super();
 		this.id = id;
 		this.rentalEntity = rentalEntity;
@@ -55,6 +59,8 @@ public class PropertyDTO {
 		this.address = address;
 		this.aptUnit = aptUnit;
 		this.coverImage = coverImage;
+		this.managerName=managerName;
+		this.managerPhone=managerPhone;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 		this.name=name;
@@ -141,6 +147,23 @@ public class PropertyDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public String getManagerName() {
+		return managerName;
+	}
+
+	public void setManagerName(String managerName) {
+		this.managerName = managerName;
+	}
+
+	public String getManagerPhone() {
+		return managerPhone;
+	}
+
+	public void setManagerPhone(String managerPhone) {
+		this.managerPhone = managerPhone;
+	}
+	
 	
 	
 }

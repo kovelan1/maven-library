@@ -95,7 +95,7 @@ public class Contract {
 	private double rentDiscount;
 	private String rentDiscountType;  //fixed or percentage
 	
-	
+	private boolean tenantCarpetCleaning;
 	
 	@Column(columnDefinition = "LONGTEXT") 
 	private String rentDiscountDescription; 
@@ -431,11 +431,11 @@ public class Contract {
 		this.isTenantMaintenance = isTenantMaintenance;
 	}
 
-	public boolean isTenantInsurance() {
+	public boolean getIsTenantInsurance() {
 		return isTenantInsurance;
 	}
 
-	public void setTenantInsurance(boolean isTenantInsurance) {
+	public void setIsTenantInsurance(boolean isTenantInsurance) {
 		this.isTenantInsurance = isTenantInsurance;
 	}
 
@@ -739,6 +739,18 @@ public class Contract {
 
 	public String getOtherRentFee3Name() {
 		return otherRentFee3Name;
+	}
+
+
+
+	public boolean isTenantCarpetCleaning() {
+		return tenantCarpetCleaning;
+	}
+
+
+
+	public void setTenantCarpetCleaning(boolean tenantCarpetCleaning) {
+		this.tenantCarpetCleaning = tenantCarpetCleaning;
 	}
 
 

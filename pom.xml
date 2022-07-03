@@ -139,7 +139,7 @@
 	    <artifactId>jackson-annotations</artifactId>
 	    <version>2.9.6</version>
 	</dependency>
-  	
+	
 
 
   	<dependency>
@@ -147,7 +147,19 @@
   		<artifactId>spring-boot-starter-data-jpa</artifactId>
   		<version>2.2.7.RELEASE</version>
   	</dependency>
- 
-  </dependencies>
+
+  	<dependency>
+  		<groupId>org.projectlombok</groupId>
+  		<artifactId>lombok</artifactId>
+  		<version>1.18.22</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springdoc</groupId>
+  		<artifactId>springdoc-openapi-ui</artifactId>
+  		<version>1.6.9</version>
+  	</dependency>
+    </dependencies>
+    
+    
 	
 </project>
