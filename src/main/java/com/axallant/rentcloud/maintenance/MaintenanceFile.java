@@ -13,6 +13,7 @@ import org.hibernate.annotations.ParamDef;
 import org.hibernate.annotations.SQLDelete;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,7 +33,7 @@ public class MaintenanceFile extends CommonFields{
 	private Long id;
 	
 	@ManyToOne
-	@JsonIgnore
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	@JoinColumn(name="service_request_id")
 	private ServiceRequest serviceRequest;
 	

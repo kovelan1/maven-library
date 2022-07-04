@@ -21,6 +21,7 @@ import javax.persistence.OrderBy;
 import org.hibernate.annotations.Where;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -41,7 +42,7 @@ public class JobAppointment extends CommonFields{
 			mappedBy = "jobAppointment")
 	private ServiceQuotation quotation;
 	
-	@JsonIgnore
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	@OneToOne(fetch = FetchType.LAZY,
             cascade =  CascadeType.ALL,
 			mappedBy = "jobAppointment")

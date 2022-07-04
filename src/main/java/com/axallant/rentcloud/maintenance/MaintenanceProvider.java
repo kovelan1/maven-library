@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import org.hibernate.annotations.Where;
 
@@ -22,6 +24,11 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
+@Table(uniqueConstraints = {
+	    @UniqueConstraint(columnNames = {
+	        "email"
+	    })
+	})
 public class MaintenanceProvider extends CommonFields{
 
 	@Id
@@ -30,6 +37,7 @@ public class MaintenanceProvider extends CommonFields{
 	
 	private String firstName;
 	private String lastName;
+	
 	private String email;
 	private String mobile;
 	private Address address;

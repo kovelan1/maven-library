@@ -16,6 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -38,7 +39,7 @@ public class ProviderInvite extends CommonFields{
 	private MaintenanceProvider maintenanceProvider;
 	
 	@ManyToOne
-	@JsonIgnore
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	@NotNull
 	@JoinColumn(name="service_request_id")
 	private ServiceRequest serviceRequest;
