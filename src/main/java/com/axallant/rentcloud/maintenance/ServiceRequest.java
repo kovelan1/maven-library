@@ -30,7 +30,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ServiceRequest {
+public class ServiceRequest extends CommonFields{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -56,7 +56,10 @@ public class ServiceRequest {
 	@Column(columnDefinition = "LONGTEXT")
 	private String description;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "serviceRequest",cascade = CascadeType.ALL)
+	private List<TenantAvailablityTime> tenantAvailablityTimes;
+	
+	@OneToMany(mappedBy = "serviceRequest",cascade = CascadeType.ALL)
     @OrderBy("createdAt DESC")
 	private List<MaintenanceFile> images;
 	

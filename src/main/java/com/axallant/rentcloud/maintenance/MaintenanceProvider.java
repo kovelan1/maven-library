@@ -37,10 +37,13 @@ public class MaintenanceProvider extends CommonFields{
 	
 	private String firstName;
 	private String lastName;
+	private String companyName;
 	
 	private String email;
 	private String mobile;
 	private Address address;
+	@OneToMany(mappedBy = "maintenanceProvider", cascade = CascadeType.ALL)
+	private List<WorkingArea> workingAreas;
 	private String skills;
 	private String image;
 

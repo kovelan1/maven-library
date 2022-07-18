@@ -54,12 +54,12 @@ public class ServiceQuotation extends CommonFields{
 	@Column(columnDefinition = "LONGTEXT")
 	private String description; 
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "serviceQuotation",cascade = CascadeType.ALL)
     @OrderBy("createdAt DESC")
     @Where(clause = "deleted = false")
-	private List<MaintenanceFile> images;
+	private List<MaintenanceFile> files;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "serviceQuotation",cascade = CascadeType.ALL)
     @OrderBy("createdAt DESC")
     @Where(clause = "deleted = false")
 	private List<MaintenanceFile> documents;

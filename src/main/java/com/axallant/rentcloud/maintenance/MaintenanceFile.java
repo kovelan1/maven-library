@@ -37,6 +37,11 @@ public class MaintenanceFile extends CommonFields{
 	@JoinColumn(name="service_request_id")
 	private ServiceRequest serviceRequest;
 	
+	@ManyToOne
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+	@JoinColumn(name="service_quotation_id")
+	private ServiceQuotation serviceQuotation;
+	
 	private String fileName;
 	
 	private String category;
