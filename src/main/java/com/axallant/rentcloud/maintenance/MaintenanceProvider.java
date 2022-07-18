@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -38,6 +40,8 @@ public class MaintenanceProvider extends CommonFields{
 	private String firstName;
 	private String lastName;
 	private String companyName;
+	@Enumerated(EnumType.STRING)
+	private AddedBy addedBy;
 	
 	private String email;
 	private String mobile;
