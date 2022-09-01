@@ -17,10 +17,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.OrderBy;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-
-import org.hibernate.annotations.Where;
-
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

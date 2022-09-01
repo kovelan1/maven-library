@@ -1,7 +1,12 @@
 package com.axallant.rentcloud.maintenance;
 
 public enum MaintenanceEvent {
-
+	JobStatusPending,
+	JobStatusVisited,
+	JobStatusJobstarted,
+	JobStatusCanceled,
+	JobStatusFinished,
+	JobStatusRejected,
 	ServiceRequestCreated,
 	ServiceRequestApproved,
 	ServiceRequestRejected,
@@ -9,6 +14,7 @@ public enum MaintenanceEvent {
 	ServiceRequestUpdatedByTenant,
 	ServiceRequestUpdatedByLandlord,
 	ServiceRequestModificationRequested,
+	ProviderInvited,
 	QuotationReceived,
 	QuatationApproved,
 	QuatationRejected,
@@ -17,8 +23,20 @@ public enum MaintenanceEvent {
 	QuatationCanceled,
 	JobAssigned,
 	JobAssignedUpdated,
-	JobFinished,
+	JobFinishedByProvider,
+	JobFinishedApprovedByTenant,
 	JobCanceled,
 	JobDelayRequest,
-	JobDelayNotified
+	JobDelayNotified;
+	
+	
+	public static MaintenanceEvent JobStatusChange(JobStatus jobStatus) {
+		return MaintenanceEvent.values()[jobStatus.ordinal()];
+	}
+	
+	
+	 
+	 
+	 
+	 
 }

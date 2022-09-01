@@ -53,6 +53,7 @@ public class JobAppointment extends CommonFields{
 	private MaintenanceProvider maintenanceProvider;
 	
 	private double approvedCost;
+	
 	@Enumerated(EnumType.STRING)
 	private JobStatus status;
 	
@@ -74,7 +75,6 @@ public class JobAppointment extends CommonFields{
 	private double jobHours;
 	
 	private boolean paid;
-	
 	
 
 }

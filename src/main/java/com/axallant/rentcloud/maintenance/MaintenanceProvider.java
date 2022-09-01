@@ -3,6 +3,7 @@ package com.axallant.rentcloud.maintenance;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -43,6 +44,7 @@ public class MaintenanceProvider extends CommonFields{
 	@Enumerated(EnumType.STRING)
 	private AddedBy addedBy;
 	
+	private String addedById;
 	private String email;
 	private String mobile;
 	private Address address;
@@ -50,6 +52,11 @@ public class MaintenanceProvider extends CommonFields{
 	private List<WorkingArea> workingAreas;
 	private String skills;
 	private String image;
+	
+	@Column(columnDefinition = "LONGTEXT")
+	private String about;
+	
+	private String profileImage;
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "maintenanceProvider", cascade = CascadeType.ALL)
