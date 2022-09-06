@@ -1,5 +1,7 @@
 package com.axallant.rentcloud.notification;
 
+import com.axallant.rentcloud.maintenance.MaintenanceEvent;
+
 public enum Events {
 	application_received,
 	application_rejected,
@@ -22,6 +24,40 @@ public enum Events {
 	maintenance_req_approved,
 	maintenance_req_accepted,
 	maintenance_req_porArranged,
-	maintenance_req_finish
+	maintenance_req_finish,
+	
+	JobStatusPending,
+	JobStatusVisited,
+	JobStatusJobstarted,
+	JobStatusCanceled,
+	JobStatusFinished,
+	JobStatusRejected,
+	ServiceRequestCreated,
+	ServiceRequestApproved,
+	ServiceRequestRejected,
+	ServiceRequestCanceled,
+	ServiceRequestUpdatedByTenant,
+	ServiceRequestUpdatedByLandlord,
+	ServiceRequestModificationRequested,
+	ProviderInvited,
+	QuotationReceived,
+	QuotationApproved,
+	QuotationRejected,
+	QuotationModificationRequested,
+	QuotationUpdated,
+	QuotationCanceled,
+	JobAssigned,
+	JobAssignedUpdated,
+	JobFinishedByProvider,
+	JobFinishedApprovedByTenant,
+	JobCanceled,
+	JobDelayRequest,
+	JobDelayNotified;
+	
+	public static Events maintenanceRequestEvents(MaintenanceEvent maintenanceEvent) {
+		
+		return Events.values()[(maintenanceEvent.ordinal()+22)];
+	}
+	
 	
 }
