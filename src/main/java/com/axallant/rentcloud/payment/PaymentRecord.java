@@ -22,10 +22,11 @@ public class PaymentRecord {
 	private String tenantId;
 	private String landlordId;
 	private double paidAmount;
-	private LocalDateTime paidDate;
+	private Date paidDate;
 	private String status;
 	private String chargeId;
 	private String paymentType;
+	private String paymentMethod;
 	private double transferToLandload;
 	private double axallantCharge;
 	private double stripeCharge;
@@ -102,11 +103,11 @@ public class PaymentRecord {
 		this.paidAmount = paidAmount;
 	}
 
-	public LocalDateTime getPaidDate() {
+	public Date getPaidDate() {
 		return paidDate;
 	}
 
-	public void setPaidDate(LocalDateTime paidDate) {
+	public void setPaidDate(Date paidDate) {
 		this.paidDate = paidDate;
 	}
 
@@ -172,6 +173,14 @@ public class PaymentRecord {
 
 	public void setLandloadReceipt(String landloadReceipt) {
 		this.landloadReceipt = landloadReceipt;
+	}
+
+	public String getPaymentMethod() {
+		return paymentMethod;
+	}
+
+	public void setPaymentMethod(String paymentMethod) {
+		this.paymentMethod = paymentMethod;
 	}
 	
 	
