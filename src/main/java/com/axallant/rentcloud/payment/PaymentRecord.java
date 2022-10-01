@@ -32,6 +32,7 @@ public class PaymentRecord {
 	private double stripeCharge;
 	private String tenantReceipt;
 	private String landloadReceipt;
+	private String subscriptionId;
 	
 	public PaymentRecord() {
 		// TODO Auto-generated constructor stub
@@ -181,6 +182,14 @@ public class PaymentRecord {
 
 	public void setPaymentMethod(String paymentMethod) {
 		this.paymentMethod = paymentMethod;
+	}
+
+	public String getSubscriptionId() {
+		return subscriptionId;
+	}
+
+	public void setSubscriptionId(String subscriptionId) {
+		this.subscriptionId = subscriptionId;
 	}
 	
 	

@@ -13,6 +13,7 @@ public class SubscriptionRequestDTO {
 	private Date contractEndDate;
 	private Date subscriptionEndDate;
 	private Date subscriptionStartDate;
+	private int iterations;
 	private String customerId;
 	private String accountId;
 	private double applicationFee;
@@ -163,6 +164,16 @@ public class SubscriptionRequestDTO {
 
 	public void setContract(Contract contract) {
 		this.contract = contract;
+	}
+
+
+	public int getIterations() {
+		return iterations;
+	}
+
+
+	public void setIterations(int iterations) {
+		this.iterations = iterations;
 	}
 	
 	
