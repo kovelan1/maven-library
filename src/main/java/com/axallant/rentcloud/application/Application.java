@@ -64,6 +64,8 @@ public class Application {
     private boolean  cableTv;
     private boolean  other;
     private boolean  water;
+    private boolean contractCreated;
+    private long contractId;
 	
 	
 	@CreationTimestamp
@@ -347,6 +349,26 @@ public class Application {
 
 	public void setBusinessApplication(BusinessApplication businessApplication) {
 		this.businessApplication = businessApplication;
+	}
+
+
+	public boolean isContractCreated() {
+		return contractCreated;
+	}
+
+
+	public void setContractCreated(boolean contractCreated) {
+		this.contractCreated = contractCreated;
+	}
+
+
+	public long getContractId() {
+		return contractId;
+	}
+
+
+	public void setContractId(long contractId) {
+		this.contractId = contractId;
 	}
 
 	

@@ -19,7 +19,9 @@ public class SubscriptionRequestDTO {
 	private double applicationFee;
 	private double rent;
 	private Contract contract;
-	 
+	private String shortSignature;
+	private String signatureImage;
+	private boolean signature;
 
 	SubscriptionRequestDTO(){
 		
@@ -174,6 +176,36 @@ public class SubscriptionRequestDTO {
 
 	public void setIterations(int iterations) {
 		this.iterations = iterations;
+	}
+
+
+	public String getShortSignature() {
+		return shortSignature;
+	}
+
+
+	public void setShortSignature(String shortSignature) {
+		this.shortSignature = shortSignature;
+	}
+
+
+	public String getSignatureImage() {
+		return signatureImage;
+	}
+
+
+	public void setSignatureImage(String signatureImage) {
+		this.signatureImage = signatureImage;
+	}
+
+
+	public boolean isSignature() {
+		return signature;
+	}
+
+
+	public void setSignature(boolean signature) {
+		this.signature = signature;
 	}
 	
 	

@@ -8,6 +8,7 @@ import javax.persistence.Embeddable;
 public class Address implements Serializable {
 
 	private String address;
+	private String address2;
 	private String city;
 	private String state;
 	private String zip;
@@ -16,9 +17,10 @@ public class Address implements Serializable {
 	private double lng=0.0; 
 	
 	
-	public Address(String address, String city, String state, String zip, String country, double lat, double lng) {
+	public Address(String address,String address2, String city, String state, String zip, String country, double lat, double lng) {
 		super();
 		this.address = address;
+		this.address2=address2;
 		this.city = city;
 		this.state = state;
 		this.zip = zip;
@@ -70,6 +72,12 @@ public class Address implements Serializable {
 	}
 	public void setLng(double lng) {
 		this.lng = lng;
+	}
+	public String getAddress2() {
+		return address2;
+	}
+	public void setAddress2(String address2) {
+		this.address2 = address2;
 	}
 	
 	

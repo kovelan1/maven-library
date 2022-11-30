@@ -19,13 +19,17 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.annotations.Where;
 
 import com.axallant.rentcloud.models.Address;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "property")
+@SQLDelete(sql = "UPDATE property SET deleted = true WHERE id=?")
+@Where(clause = "deleted=false")
 public class Property {
 
 	@Id 
@@ -46,6 +50,7 @@ public class Property {
 	private int applicationFee;
 	private int platformFee;
 	private boolean enable;
+	private boolean deleted = Boolean.FALSE;
 	private String currency;
 	@CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
@@ -223,6 +228,16 @@ public class Property {
 
 	public void setManagerPhone(String managerPhone) {
 		this.managerPhone = managerPhone;
+	}
+
+
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}
 	
 	
