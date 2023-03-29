@@ -49,6 +49,10 @@ public class RentalEntity implements Serializable{
 	private Date availableFrom;
 	private String fullRooms;
 	private String halfRooms;
+	private String halfBathrooms;
+	private String fullBathrooms;
+	private String quarterBathrooms;
+	private String threeQuarterBathrooms;
 	private String bedRooms;
 	private String bathroomsAttach;
 	private String bathroomsSeparate;
@@ -1265,6 +1269,102 @@ public class RentalEntity implements Serializable{
 
 	public void setContractId(long contractId) {
 		this.contractId = contractId;
+	}
+
+
+
+
+
+
+
+
+
+	public String getHalfBathrooms() {
+		return halfBathrooms;
+	}
+
+
+
+
+
+
+
+
+
+	public void setHalfBathrooms(String halfBathrooms) {
+		this.halfBathrooms = halfBathrooms;
+	}
+
+
+
+
+
+
+
+
+
+	public String getFullBathrooms() {
+		return fullBathrooms;
+	}
+
+
+
+
+
+
+
+
+
+	public void setFullBathrooms(String fullBathrooms) {
+		this.fullBathrooms = fullBathrooms;
+	}
+
+
+
+
+
+
+
+
+
+	public String getQuarterBathrooms() {
+		return quarterBathrooms;
+	}
+
+
+
+
+
+
+
+
+
+	public void setQuarterBathrooms(String quarterBathrooms) {
+		this.quarterBathrooms = quarterBathrooms;
+	}
+
+
+
+
+
+
+
+
+
+	public String getThreeQuarterBathrooms() {
+		return threeQuarterBathrooms;
+	}
+
+
+
+
+
+
+
+
+
+	public void setThreeQuarterBathrooms(String threeQuarterBathrooms) {
+		this.threeQuarterBathrooms = threeQuarterBathrooms;
 	}
 
 	
