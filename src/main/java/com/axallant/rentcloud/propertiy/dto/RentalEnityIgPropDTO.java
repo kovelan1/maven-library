@@ -19,6 +19,10 @@ public class RentalEnityIgPropDTO {
 	private String listingHeading;
 	private String fullRooms;
 	private String halfRooms;
+	private String halfBathrooms;
+	private String fullBathrooms;
+	private String quarterBathrooms;
+	private String threeQuarterBathrooms;
 	private String bedRooms;
 	private String bathroomsAttach;
 	private String bathroomsSeparate;
@@ -99,6 +103,10 @@ public class RentalEnityIgPropDTO {
 					rentalEntity.getListingHeading(), 
 					rentalEntity.getFullRooms(), 
 					rentalEntity.getHalfRooms(), 
+					rentalEntity.getHalfBathrooms(),
+					rentalEntity.getFullBathrooms(),
+					rentalEntity.getQuarterBathrooms(),
+					rentalEntity.getThreeQuarterBathrooms(),
 					rentalEntity.getBedRooms(), 
 					rentalEntity.getBathroomsAttach(), 
 					rentalEntity.getBathroomsSeparate(), 
@@ -168,7 +176,12 @@ public class RentalEnityIgPropDTO {
 	}
 
 	public RentalEnityIgPropDTO(Long id, String unitName, String unitType, Status status,
-			String listingHeading, String fullRooms, String halfRooms, String bedRooms, String bathroomsAttach,
+			String listingHeading, String fullRooms, String halfRooms,
+			 String halfBathrooms,
+			 String fullBathrooms,
+			 String quarterBathrooms,
+			 String threeQuarterBathrooms,
+			String bedRooms, String bathroomsAttach,
 			String bathroomsSeparate, String sqFeet, String description, String petPolicy, boolean furnisher,
 			boolean parkingGarage, boolean parkingOnStreet, boolean parkingDriveway, boolean parkingPrivateLot,
 			boolean parkingDedicatedSpot, boolean parkingCovered, boolean outDoorSharedYard, boolean outDoorPrivateYard,
@@ -192,6 +205,10 @@ public class RentalEnityIgPropDTO {
 		this.listingHeading = listingHeading;
 		this.fullRooms = fullRooms;
 		this.halfRooms = halfRooms;
+		this.halfBathrooms=halfBathrooms;
+		this.fullBathrooms=fullBathrooms;
+		this.quarterBathrooms=quarterBathrooms;
+		this.threeQuarterBathrooms=threeQuarterBathrooms;
 		this.bedRooms = bedRooms;
 		this.bathroomsAttach = bathroomsAttach;
 		this.bathroomsSeparate = bathroomsSeparate;
@@ -825,6 +842,38 @@ public class RentalEnityIgPropDTO {
 
 	public void setHeatingOther(boolean heatingOther) {
 		this.heatingOther = heatingOther;
+	}
+
+	public String getHalfBathrooms() {
+		return halfBathrooms;
+	}
+
+	public void setHalfBathrooms(String halfBathrooms) {
+		this.halfBathrooms = halfBathrooms;
+	}
+
+	public String getFullBathrooms() {
+		return fullBathrooms;
+	}
+
+	public void setFullBathrooms(String fullBathrooms) {
+		this.fullBathrooms = fullBathrooms;
+	}
+
+	public String getQuarterBathrooms() {
+		return quarterBathrooms;
+	}
+
+	public void setQuarterBathrooms(String quarterBathrooms) {
+		this.quarterBathrooms = quarterBathrooms;
+	}
+
+	public String getThreeQuarterBathrooms() {
+		return threeQuarterBathrooms;
+	}
+
+	public void setThreeQuarterBathrooms(String threeQuarterBathrooms) {
+		this.threeQuarterBathrooms = threeQuarterBathrooms;
 	}
 	
 	
