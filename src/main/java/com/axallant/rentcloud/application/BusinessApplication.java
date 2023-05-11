@@ -47,6 +47,7 @@ public class BusinessApplication {
 	@Embedded
 	@AttributeOverrides( {
         @AttributeOverride(name="address", column = @Column(name="parentCompanyAddress") ),
+		@AttributeOverride(name="address2", column = @Column(name="parentCompanyAddress2") ),
         @AttributeOverride(name="city", column = @Column(name="parentCompanyCity") ),
         @AttributeOverride(name="state", column = @Column(name="parentCompanyState") ),
         @AttributeOverride(name="zip", column = @Column(name="parentCompanyZip") ),
@@ -66,6 +67,7 @@ public class BusinessApplication {
 	@Embedded
 	@AttributeOverrides( {
         @AttributeOverride(name="address", column = @Column(name="primaryBankAddress") ),
+		@AttributeOverride(name="address2", column = @Column(name="primaryBankAddress2") ),
         @AttributeOverride(name="city", column = @Column(name="primaryBankCity") ),
         @AttributeOverride(name="state", column = @Column(name="primaryBankState") ),
         @AttributeOverride(name="zip", column = @Column(name="primaryBankZip") ),
@@ -80,6 +82,7 @@ public class BusinessApplication {
 	@Embedded
 	@AttributeOverrides( {
         @AttributeOverride(name="address", column = @Column(name="secondaryBankAddress") ),
+		@AttributeOverride(name="address2", column = @Column(name="secondaryBankAddress2") ),
         @AttributeOverride(name="city", column = @Column(name="secondaryBankCity") ),
         @AttributeOverride(name="state", column = @Column(name="secondaryBankState") ),
         @AttributeOverride(name="zip", column = @Column(name="secondaryBankZip") ),

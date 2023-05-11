@@ -29,6 +29,8 @@ public class Applicant {
 	private ApplicationType type;
 	
 	private String drivingLicNo;
+	private String drivingLicIssuedProvince;
+	private boolean drivingLicValid;
 	private String emergencyNo;
 	private String ssn;
 	private Date dob;
@@ -40,6 +42,8 @@ public class Applicant {
 	private String resPresentState;
 	private String resPresentZip;
 	private String resPresentPhone;
+	private String resPresentEmail;
+
 	private String resPresentFax;
 	private double resPresentRent;
 	private Date resPresentFrom;
@@ -59,6 +63,8 @@ public class Applicant {
 	private String resPreviousCity;
 	private String resPreviousState;
 	private String resPreviousZip;
+	private String resPreviousPhoneNumber;
+	private String resPreviousEmail;
 	private double resPreviousRent;
 	private Date resPreviousFrom;
 	private Date resPreviousTo;
@@ -73,6 +79,7 @@ public class Applicant {
 	private String resPreviousReasonLeaving;
 
 	private String empPresentEmployed;
+	private String empPresentName;
 	private String empPresentEmail;
 	private String empPresentAddress;
 	private String empPresentCity;
@@ -86,6 +93,7 @@ public class Applicant {
 	private double empPresentAnnualIncome;
 	
 	private String empPreviousEmployed;
+	private String empPreviousName;
 	private String empPreviousEmail;
 	private String empPreviousAddress;
 	private String empPreviousCity;
@@ -117,14 +125,22 @@ public class Applicant {
 	
 	private String referenceName;
 	private String referenceAddress;
+	private String referenceCity;
+	private String referenceProvince;
 	private String referenceTelephone;
 	
 	private String referenceName2;
 	private String referenceAddress2;
+	private String referenceCity2;
+	private String referenceProvince2;
 	private String referenceTelephone2;
 	
 	private String emergencyContactName;
 	private String emergencyContactPhone;
+	private String emergencyContactStreet;
+	private String emergencyContactCity;
+	private String emergencyContactProvince;
+	private String emergencyContactPostalCode;
 	private String emergencyContactFax;
 	private String emergencyContactRelation;
 	
@@ -160,8 +176,10 @@ public class Applicant {
 	private String vehicleType;
 	private String vehicleMadeBy;
 	private String vehicleModel;
+	private String vehicleColour;
 	private String vehicleYear;
 	private String vehicleLicenseNumber;
+	private String vehicleLicenseNumberplateIssuedProvince;
 	
 	@CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
@@ -173,8 +191,17 @@ public class Applicant {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated_at", nullable = false)
     private Date updatedAt;
-    
+
     public Applicant() {}
+
+
+	public String getDrivingLicIssuedProvince() {
+		return drivingLicIssuedProvince;
+	}
+
+	public void setDrivingLicIssuedProvince(String drivingLicIssuedProvince) {
+		this.drivingLicIssuedProvince = drivingLicIssuedProvince;
+	}
 
 	public String getUsername() {
 		return username;
@@ -1176,8 +1203,133 @@ public class Applicant {
 	public void setType(ApplicationType type) {
 		this.type = type;
 	}
-	
-	
-	
-	
+
+
+	public boolean isDrivingLicValid() {
+		return drivingLicValid;
+	}
+
+	public String getResPresentEmail() {
+		return resPresentEmail;
+	}
+
+	public String getResPreviousPhoneNumber() {
+		return resPreviousPhoneNumber;
+	}
+
+	public String getResPreviousEmail() {
+		return resPreviousEmail;
+	}
+
+	public String getReferenceCity() {
+		return referenceCity;
+	}
+
+	public String getReferenceProvince() {
+		return referenceProvince;
+	}
+
+	public String getReferenceCity2() {
+		return referenceCity2;
+	}
+
+	public String getReferenceProvince2() {
+		return referenceProvince2;
+	}
+
+	public String getEmergencyContactStreet() {
+		return emergencyContactStreet;
+	}
+
+	public String getEmergencyContactCity() {
+		return emergencyContactCity;
+	}
+
+	public String getEmergencyContactProvince() {
+		return emergencyContactProvince;
+	}
+
+	public String getEmergencyContactPostalCode() {
+		return emergencyContactPostalCode;
+	}
+
+	public String getVehicleColour() {
+		return vehicleColour;
+	}
+
+	public String getVehicleLicenseNumberplateIssuedProvince() {
+		return vehicleLicenseNumberplateIssuedProvince;
+	}
+
+	public void setDrivingLicValid(boolean drivingLicValid) {
+		this.drivingLicValid = drivingLicValid;
+	}
+
+	public void setResPresentEmail(String resPresentEmail) {
+		this.resPresentEmail = resPresentEmail;
+	}
+
+	public void setResPreviousPhoneNumber(String resPreviousPhoneNumber) {
+		this.resPreviousPhoneNumber = resPreviousPhoneNumber;
+	}
+
+	public void setResPreviousEmail(String resPreviousEmail) {
+		this.resPreviousEmail = resPreviousEmail;
+	}
+
+	public void setReferenceCity(String referenceCity) {
+		this.referenceCity = referenceCity;
+	}
+
+	public void setReferenceProvince(String referenceProvince) {
+		this.referenceProvince = referenceProvince;
+	}
+
+	public void setReferenceCity2(String referenceCity2) {
+		this.referenceCity2 = referenceCity2;
+	}
+
+	public void setReferenceProvince2(String referenceProvince2) {
+		this.referenceProvince2 = referenceProvince2;
+	}
+
+	public void setEmergencyContactStreet(String emergencyContactStreet) {
+		this.emergencyContactStreet = emergencyContactStreet;
+	}
+
+	public void setEmergencyContactCity(String emergencyContactCity) {
+		this.emergencyContactCity = emergencyContactCity;
+	}
+
+	public void setEmergencyContactProvince(String emergencyContactProvince) {
+		this.emergencyContactProvince = emergencyContactProvince;
+	}
+
+	public void setEmergencyContactPostalCode(String emergencyContactPostalCode) {
+		this.emergencyContactPostalCode = emergencyContactPostalCode;
+	}
+
+	public void setVehicleColour(String vehicleColour) {
+		this.vehicleColour = vehicleColour;
+	}
+
+	public void setVehicleLicenseNumberplateIssuedProvince(String vehicleLicenseNumberplateIssuedProvince) {
+		this.vehicleLicenseNumberplateIssuedProvince = vehicleLicenseNumberplateIssuedProvince;
+	}
+
+	public String getEmpPresentName() {
+		return empPresentName;
+	}
+
+	public void setEmpPresentName(String empPresentName) {
+		this.empPresentName = empPresentName;
+	}
+
+	public String getEmpPreviousName() {
+		return empPreviousName;
+	}
+
+	public void setEmpPreviousName(String empPreviousName) {
+		this.empPreviousName = empPreviousName;
+	}
 }

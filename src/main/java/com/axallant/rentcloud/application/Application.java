@@ -45,6 +45,10 @@ public class Application {
 	private double rent;
 	private boolean pets;
 	private int petCount;
+	private String petBreed;
+	private String petHeight;
+	private String petWeight;
+
 	private String creditCheck;
 	private String securityCheck;
 	private String applicationForm;
@@ -54,6 +58,7 @@ public class Application {
 	@Enumerated(EnumType.STRING)
 	private ApplicationStatus status;
 	private int totalOccupants;
+	private int totalOccupantsChildren;
 	
 	private boolean  hydro;
     private boolean  gas;
@@ -81,6 +86,13 @@ public class Application {
 	
 	public Application() {}
 
+	public String getPetBreed() {
+		return petBreed;
+	}
+
+	public void setPetBreed(String petBreed) {
+		this.petBreed = petBreed;
+	}
 
 	public long getId() {
 		return id;
@@ -371,8 +383,29 @@ public class Application {
 		this.contractId = contractId;
 	}
 
-	
-	
-	
+
+	public String getPetHeight() {
+		return petHeight;
+	}
+
+	public void setPetHeight(String petHeight) {
+		this.petHeight = petHeight;
+	}
+
+	public String getPetWeight() {
+		return petWeight;
+	}
+
+	public void setPetWeight(String petWeight) {
+		this.petWeight = petWeight;
+	}
+
+	public int getTotalOccupantsChildren() {
+		return totalOccupantsChildren;
+	}
+
+	public void setTotalOccupantsChildren(int totalOccupantsChildren) {
+		this.totalOccupantsChildren = totalOccupantsChildren;
+	}
 }
 
