@@ -32,6 +32,9 @@ public class User implements Serializable {
     private String middleName;
     private Address address;
     private String mobileNumber;
+	private String otherPhoneNumber;
+
+	private String faxNumber;
     
     private String stripeCustomerId;
     
@@ -71,6 +74,8 @@ public class User implements Serializable {
         this.provider=user.getProvider();
         this.stripeCustomerId=user.getStripeCustomerId();
         this.stripeAccountId=user.getStripeAccountId();
+		this.otherPhoneNumber=user.getOtherPhoneNumber();
+		this.faxNumber=user.getFaxNumber();
         
     }
 
@@ -203,7 +208,20 @@ public class User implements Serializable {
 		this.stripeAccountId = stripeAccountId;
 	}
 
-	
-	
-	
+
+	public String getOtherPhoneNumber() {
+		return otherPhoneNumber;
+	}
+
+	public void setOtherPhoneNumber(String otherPhoneNumber) {
+		this.otherPhoneNumber = otherPhoneNumber;
+	}
+
+	public String getFaxNumber() {
+		return faxNumber;
+	}
+
+	public void setFaxNumber(String faxNumber) {
+		this.faxNumber = faxNumber;
+	}
 }

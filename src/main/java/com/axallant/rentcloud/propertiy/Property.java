@@ -52,6 +52,8 @@ public class Property {
 	private boolean enable;
 	private boolean deleted = Boolean.FALSE;
 	private String currency;
+
+	private boolean isManageByProfessional;
 	@CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "created_at", nullable = false, updatable = false)
@@ -68,7 +70,7 @@ public class Property {
 
 	public Property(Long id, String name, List<RentalEntity> rentalEntity, PropertyType type, Address address,
 			String aptUnit, String coverImage,String managerName,String managerPhone, int applicationFee, int platformFee, boolean enable, String currency,
-			Date createdAt, Date updatedAt) {
+					boolean isManageByProfessional,Date createdAt, Date updatedAt) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -83,6 +85,7 @@ public class Property {
 		this.platformFee = platformFee;
 		this.enable = enable;
 		this.currency = currency;
+		this.isManageByProfessional=isManageByProfessional;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 	}
@@ -239,7 +242,12 @@ public class Property {
 	public void setDeleted(boolean deleted) {
 		this.deleted = deleted;
 	}
-	
-	
 
+	public boolean isManageByProfessional() {
+		return isManageByProfessional;
+	}
+
+	public void setManageByProfessional(boolean manageByProfessional) {
+		isManageByProfessional = manageByProfessional;
+	}
 }

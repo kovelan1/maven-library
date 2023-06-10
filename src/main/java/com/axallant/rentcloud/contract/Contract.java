@@ -38,11 +38,18 @@ public class Contract {
 	private Date startDate;
 	private Date endDate;
 	private String agreementType; //fixed monthly other
-	private String otherAgreementType; 
+	private String otherAgreementType;
+
+	private boolean agreementContinueAfter; //bs agreement -> At the end of this time, the tenancy will continue on a month-to-month basis, or another fixed length of time, unless the tenant gives notice to end tenancy at least one clear month before the end of theterm.
+	private String reasonForVacate;
+
+	private String tenancyRegulationSectionNo;
 	private double rent;
 	private int rentCollectionDay;
 	private String rentPaidOnPeriod;  // in ontrio contract No.5 (month , etc...) // if month fill the field month
+	private String rentLateFeeChargeOn;
 	private boolean isPartialRent;
+
 	private double partialRent;
 	private Date partialRentDate;
 	private Date partialRentFrom;
@@ -148,7 +155,24 @@ public class Contract {
 	private boolean laundry ;
 	private String laundryChargeType ;
 	private boolean guestParking;
-	private String guestParkingType; 
+	private String guestParkingType;
+
+	private boolean isWater;
+	private boolean isCablevision;
+	private boolean isElectricity;
+	private boolean isInternet;
+	private boolean isHeat;
+	private boolean isSewageDisposal;
+	private boolean isSnowRemoval;
+	private boolean isRecreationFacilities;
+	private boolean isGarbageCollection;
+	private boolean isRecyclingServices;
+	private boolean isKitchenScrapCollection;
+	private boolean isRefrigerator;
+	private boolean isDishwasher;
+	private boolean isStoveAndOven;
+	private boolean isWindowCoverings;
+	private boolean isFurniture;
 	private String serviceType1;
 	private String serviceType2;
 	private String serviceType3;
@@ -169,6 +193,11 @@ public class Contract {
 	
 	private boolean subscription;
 	private String landLordId;
+
+	private Date securityDepositPayOn;
+	private Date petChargePayOn;
+	private int numberOfPagesAddendum;
+	private int numberOfAdditionalTermsAddendum;
 	
 	@Enumerated(EnumType.STRING)
 	private AgreementPDFStatus agreementPDF;
@@ -1361,7 +1390,188 @@ public class Contract {
 		this.smokeDetectionEmeEvacuationFile = smokeDetectionEmeEvacuationFile;
 	}
 
-	
-    
+	public boolean isAgreementContinueAfter() {
+		return agreementContinueAfter;
+	}
+
+	public void setAgreementContinueAfter(boolean agreementContinueAfter) {
+		this.agreementContinueAfter = agreementContinueAfter;
+	}
+
+	public String getReasonForVacate() {
+		return reasonForVacate;
+	}
+
+	public void setReasonForVacate(String reasonForVacate) {
+		this.reasonForVacate = reasonForVacate;
+	}
+
+	public String getTenancyRegulationSectionNo() {
+		return tenancyRegulationSectionNo;
+	}
+
+	public void setTenancyRegulationSectionNo(String tenancyRegulationSectionNo) {
+		this.tenancyRegulationSectionNo = tenancyRegulationSectionNo;
+	}
+
+	public boolean isWater() {
+		return isWater;
+	}
+
+	public void setWater(boolean water) {
+		isWater = water;
+	}
+
+	public boolean isCablevision() {
+		return isCablevision;
+	}
+
+	public void setCablevision(boolean cablevision) {
+		isCablevision = cablevision;
+	}
+
+	public boolean isElectricity() {
+		return isElectricity;
+	}
+
+	public void setElectricity(boolean electricity) {
+		isElectricity = electricity;
+	}
+
+	public boolean isInternet() {
+		return isInternet;
+	}
+
+	public void setInternet(boolean internet) {
+		isInternet = internet;
+	}
+
+	public boolean isHeat() {
+		return isHeat;
+	}
+
+	public void setHeat(boolean heat) {
+		isHeat = heat;
+	}
+
+	public boolean isSewageDisposal() {
+		return isSewageDisposal;
+	}
+
+	public void setSewageDisposal(boolean sewageDisposal) {
+		isSewageDisposal = sewageDisposal;
+	}
+
+	public boolean isSnowRemoval() {
+		return isSnowRemoval;
+	}
+
+	public void setSnowRemoval(boolean snowRemoval) {
+		isSnowRemoval = snowRemoval;
+	}
+
+	public boolean isRecreationFacilities() {
+		return isRecreationFacilities;
+	}
+
+	public void setRecreationFacilities(boolean recreationFacilities) {
+		isRecreationFacilities = recreationFacilities;
+	}
+
+	public boolean isGarbageCollection() {
+		return isGarbageCollection;
+	}
+
+	public void setGarbageCollection(boolean garbageCollection) {
+		isGarbageCollection = garbageCollection;
+	}
+
+	public boolean isRecyclingServices() {
+		return isRecyclingServices;
+	}
+
+	public void setRecyclingServices(boolean recyclingServices) {
+		isRecyclingServices = recyclingServices;
+	}
+
+	public boolean isKitchenScrapCollection() {
+		return isKitchenScrapCollection;
+	}
+
+	public void setKitchenScrapCollection(boolean kitchenScrapCollection) {
+		isKitchenScrapCollection = kitchenScrapCollection;
+	}
+
+	public boolean isRefrigerator() {
+		return isRefrigerator;
+	}
+
+	public void setRefrigerator(boolean refrigerator) {
+		isRefrigerator = refrigerator;
+	}
+
+	public boolean isStoveAndOven() {
+		return isStoveAndOven;
+	}
+
+	public void setStoveAndOven(boolean stoveAndOven) {
+		isStoveAndOven = stoveAndOven;
+	}
+
+	public boolean isWindowCoverings() {
+		return isWindowCoverings;
+	}
+
+	public void setWindowCoverings(boolean windowCoverings) {
+		isWindowCoverings = windowCoverings;
+	}
+
+	public boolean isFurniture() {
+		return isFurniture;
+	}
+
+	public void setFurniture(boolean furniture) {
+		isFurniture = furniture;
+	}
+
+	public Date getSecurityDepositPayOn() {
+		return securityDepositPayOn;
+	}
+
+	public void setSecurityDepositPayOn(Date securityDepositPayOn) {
+		this.securityDepositPayOn = securityDepositPayOn;
+	}
+
+	public Date getPetChargePayOn() {
+		return petChargePayOn;
+	}
+
+	public void setPetChargePayOn(Date petChargePayOn) {
+		this.petChargePayOn = petChargePayOn;
+	}
+
+	public int getNumberOfPagesAddendum() {
+		return numberOfPagesAddendum;
+	}
+
+	public void setNumberOfPagesAddendum(int numberOfPagesAddendum) {
+		this.numberOfPagesAddendum = numberOfPagesAddendum;
+	}
+
+	public int getNumberOfAdditionalTermsAddendum() {
+		return numberOfAdditionalTermsAddendum;
+	}
+
+	public void setNumberOfAdditionalTermsAddendum(int numberOfAdditionalTermsAddendum) {
+		this.numberOfAdditionalTermsAddendum = numberOfAdditionalTermsAddendum;
+	}
+
+	public String getRentLateFeeChargeOn() {
+		return rentLateFeeChargeOn;
+	}
+
+	public void setRentLateFeeChargeOn(String rentLateFeeChargeOn) {
+		this.rentLateFeeChargeOn = rentLateFeeChargeOn;
+	}
 }
 

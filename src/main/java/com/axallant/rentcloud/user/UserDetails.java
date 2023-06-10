@@ -17,11 +17,13 @@ public class UserDetails {
 	 private List<Role> roles;
 	 private AuthProvider provider;
 	 private String imageUrl;
-	 
-	 
+
+	private String otherPhoneNumber;
+
+	private String faxNumber;
 	 
 	 public UserDetails(String username, String firstName, String lastName, String middleName, Address address,
-			String mobileNumber, List<Role> roles, AuthProvider provider, String imageUrl) {
+			String mobileNumber,String otherPhoneNumber,String faxNumber, List<Role> roles, AuthProvider provider, String imageUrl) {
 		super();
 		this.username = username;
 		this.firstName = firstName;
@@ -29,13 +31,15 @@ public class UserDetails {
 		this.middleName = middleName;
 		this.address = address;
 		this.mobileNumber = mobileNumber;
+		this.otherPhoneNumber=otherPhoneNumber;
+		this.faxNumber=faxNumber;
 		this.roles = roles;
 		this.provider = provider;
 		this.imageUrl = imageUrl;
 	}
 
 	public UserDetails transfromPramObject(User user) {
-		 return new UserDetails(user.getUsername(), user.getFirstName(), user.getLastName(), user.getMiddleName(), user.getAddress(), user.getMobileNumber(), user.getRoles(), user.getProvider(), user.getCoverImage().orElse(""));
+		 return new UserDetails(user.getUsername(), user.getFirstName(), user.getLastName(), user.getMiddleName(), user.getAddress(), user.getMobileNumber(),user.getOtherPhoneNumber(),user.getFaxNumber(), user.getRoles(), user.getProvider(), user.getCoverImage().orElse(""));
 	 }
 	 
 	 public String getUsername() {
@@ -113,8 +117,21 @@ public class UserDetails {
 	public UserDetails() {
 		// TODO Auto-generated constructor stub
 	}
-	 
-	
-	
 
+
+	public String getOtherPhoneNumber() {
+		return otherPhoneNumber;
+	}
+
+	public void setOtherPhoneNumber(String otherPhoneNumber) {
+		this.otherPhoneNumber = otherPhoneNumber;
+	}
+
+	public String getFaxNumber() {
+		return faxNumber;
+	}
+
+	public void setFaxNumber(String faxNumber) {
+		this.faxNumber = faxNumber;
+	}
 }
